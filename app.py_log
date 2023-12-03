@@ -1,0 +1,14 @@
+2023-12-03 11:39:50,333 - App - INFO - Done config_logger .. next AppGlobal msg
+2023-12-03 11:39:50,333 - App - DEBUG - pre logger debug -- did it work
+2023-12-03 11:39:50,334 - App - DEBUG - Message from AppGlobal.print_debug >> logger level in App = 10 will show at level 10
+2023-12-03 11:39:50,334 - App - Notice - 
+2023-12-03 11:39:50,334 - App - Notice - ============================
+2023-12-03 11:39:50,334 - App - Notice - 
+2023-12-03 11:39:50,334 - App - Notice - Application: GeoTrack in mode mode_tkand version  Ver 8: 2023 12 03.01
+2023-12-03 11:39:50,335 - App - Notice - 
+2023-12-03 11:39:50,335 - App - Notice - command line arg + 0  =  d:\for_github\geo_track\main.py)
+2023-12-03 11:39:50,335 - App - Notice - current directory D:\for_github\geo_track
+2023-12-03 11:39:50,335 - App - Notice - Time now: 2023-12-03 16:39:50
+2023-12-03 11:39:50,335 - App.gui - INFO - in class GUI init for the clip_board gui_with_tabs
+2023-12-03 11:39:51,971 - App - DEBUG - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2023-12-03 11:39:51,971 - App - Notice - Error messages may be in log file, check it if problems -- check parameters.py for logging level 

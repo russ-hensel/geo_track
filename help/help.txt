@@ -1,0 +1,135 @@
+GeoTrack Help File 
+
+
+Purpose:
+
+    Make maps of various types ( google earth and folium ) from input of various types:
+		
+		*A directory with photos
+        *GPX files from geo tracking devices including phones
+        *A set of photos ( files ) with geo tracking data in the metadata
+            this is more or less standard for cell phone cameras
+        *Data saved from earlier inputs.
+        
+        Data may be sorted and filtered in various ways.
+        
+        
+  	The user interface, general information.
+  	
+  		At the very top of the window is a menu bar with various options.
+  	
+  		At the top of the window but below the menu bar 
+  		you indicate your input ( data source ) preferences.
+  		
+  		Below this are options for both filtering the data ( removing unwanted data )
+  		and sorting the data.
+  		
+  		Below this are options for output and a button to kick off the activity
+  		
+  		Finally at the bottom is a "message area" where the application displays
+  		various information for you.
+        
+Buttons: -- this data is obsolete 
+
+    <Map from *.GPX file>
+        Use the 
+        Files of this type will normally have and extension of .gpx and
+        this extension is required for this application.
+    
+    
+    <Map from a Directory>
+    
+        Photos must have the extension .jpg, or .png or they will be ignored.
+        
+    <KMZ from a Directory> 
+    
+        Like map from a directory but output is a kmz file which is then
+        opened in google Earth
+        
+        
+    <Map from a FileList File> 
+    
+        A filelist file is just a text file where each line contains the
+        full name of a photo file. 
+        Photos must have the extension .jpg, or .png or they will be ignored.
+        Some photos will not have the required meta data, they will also 
+        be ignored.
+  
+    <Map from a FileList File>  
+   
+        Like map from a directory but output is a kmz file which is then
+        opened in google Earth
+        
+    <Map from a GPX file>      
+
+    <Browse...>
+        Use this button to select a file for processing.
+        If you want to select a directory ( as for <Map from a Directory> ) just
+        select one file from the directory, the application will find the rest.
+
+
+add to default file list
+Dir Recursion Limit
+Use Dates Checkbox
+Start Date 
+End Date
+Open Browse File
+Open Default FLL (FLL is File List File )
+
+
+Map modifications:
+    Maps generation may be modified in several ways
+    
+    sorting
+    
+    
+    date selection 
+
+
+
+
+Understanding the Process
+	
+	For photo input ( can be a directory to scan, a list of photos, or data saved from previous
+	input of photos )
+        You can have the program get this information in one of several ways.
+            *Make up a file with a list of file-names of your pictures
+            *Select a picture in a directory with many files, the application
+              will scan for other pictures
+            *From a gpx type file, this file can come from several sources:
+            ......
+    
+    
+    Output can take the following forms:
+    
+        A map in your web browser.
+        A so called kmz file opened in Google Earth ( if you have Google Earth on your computer )
+        
+        Secondary outputs:
+            is to take the list of files that the program has found
+            and add them to a txt file that can later be used as an input source or any other
+            use you might have for it.
+            * An Html file with the map  
+            * Kmz file for gooogle earth ( or other app )  
+    
+        
+        
+Parameters   
+	Much of the behavior of the application is specified in the parameter file: parameters.py
+	The primary documentation of this file is in the file itself.  A few mentions here:
+	
+		*
+		*
+		*
+
+
+
+
+
+
+
+
+
+
+
+      

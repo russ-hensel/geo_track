@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:geotracker="http://ilyabogdanovich.com/gpx/extensions/geotracker" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" creator="Geo Tracker 5.3.1.3446 for Android by Ilya Bogdanovich">
+  <metadata>
+    <name>Nov 11, 2023 7:08:06 PM</name>
+    <author>
+      <name>Recorded in Geo Tracker for Android from Ilya Bogdanovich</name>
+      <link href="https://play.google.com/store/apps/details?id=com.ilyabogdanovich.geotracker" />
+    </author>
+    <link href="https://play.google.com/store/apps/details?id=com.ilyabogdanovich.geotracker" />
+    <time>2023-11-12T00:08:06Z</time>
+  </metadata>
+  <trk>
+    <name>Nov 11, 2023 7:08:06 PM</name>
+    <src>Recorded in Geo Tracker for Android from Ilya Bogdanovich</src>
+    <link href="https://play.google.com/store/apps/details?id=com.ilyabogdanovich.geotracker" />
+    <extensions>
+      <geotracker:meta>
+        <length>0</length>
+        <duration>238470</duration>
+        <creationtime>2023-11-12T00:08:06Z</creationtime>
+        <activity>0</activity>
+      </geotracker:meta>
+    </extensions>
+    <trkseg>
+      <trkpt lat="41.54018214" lon="-71.01011789">
+        <ele>0.13</ele>
+        <time>2023-11-12T00:08:05Z</time>
+        <extensions>
+          <geotracker:meta c="3.17" s="0.43" />
+        </extensions>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
