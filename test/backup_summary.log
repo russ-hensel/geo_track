@@ -1,0 +1,118 @@
+
+===========================================
+Russ's python backup ( backup_thread using copy_tree_new ) 
+Beginning backup from
+D:\Russ\0000\python00\python3\_projects\rshlib
+     to
+D:\for_github\geo_track
+
+Directory Backup for Python 3 Ver 6 2023 09 05.0
+Directory depth 0
+Filter text FFMultipleFilters       function_description =  combine multiple filters 
+       0    = FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = ['_']
+    self.include_true      = False
+    self.use_lower         = True
+       1    = FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = ['a']
+    self.include_true      = False
+    self.use_lower         = True
+DFNameStartsWith       function_description =  see name 
+    include_true           = False
+    use_lower              = True
+    tail_only              = True
+    list_of_starts_with    = ['old', '_', '.']
+Time now: 2023-12-03 16:26:39
+run_backup() done -- Time now: 2023-12-03 16:26:39
+
+End of backup from
+files added   = 0
+files updated = 0
+files skipped = 0
+dir count     = 1
+dir added     = 0
+dir updated   = 1
+dir skipped   = 5
+bytes copied  = 0
+bytes skipped = 0
+errors  = 0
+bytes   = 0 B
+
+========== End of backup ===========
+
+
+===========================================
+Russ's python backup ( backup_thread using copy_tree_new ) 
+Beginning backup from
+D:\Russ\0000\python00\python3\_projects\rshlib
+     to
+D:\for_github\geo_track
+
+Directory Backup for Python 3 Ver 6 2023 09 05.0
+Directory depth 0
+Filter text FFMultipleFilters       function_description =  combine multiple filters 
+       0    = FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = ['_']
+    self.include_true      = False
+    self.use_lower         = True
+DFNameStartsWith       function_description =  see name 
+    include_true           = False
+    use_lower              = True
+    tail_only              = True
+    list_of_starts_with    = ['old', '_', '.']
+Time now: 2023-12-03 16:34:38
+run_backup() done -- Time now: 2023-12-03 16:34:38
+
+End of backup from
+files added   = 0
+files updated = 0
+files skipped = 0
+dir count     = 1
+dir added     = 0
+dir updated   = 1
+dir skipped   = 5
+bytes copied  = 0
+bytes skipped = 0
+errors  = 0
+bytes   = 0 B
+
+========== End of backup ===========
+
+
+===========================================
+Russ's python backup ( backup_thread using copy_tree_new ) 
+Beginning backup from
+D:\Russ\0000\python00\python3\_projects\rshlib
+     to
+D:\for_github\geo_track
+
+Directory Backup for Python 3 Ver 6 2023 09 05.0
+Directory depth 0
+Filter text FFMultipleFilters       function_description =  combine multiple filters 
+       0    = FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = ['_']
+    self.include_true      = False
+    self.use_lower         = True
+DFNameStartsWith       function_description =  see name 
+    include_true           = False
+    use_lower              = True
+    tail_only              = True
+    list_of_starts_with    = ['old', '_', '.']
+Time now: 2023-12-03 16:35:41
+run_backup() done -- Time now: 2023-12-03 16:35:41
+
+End of backup from
+files added   = 0
+files updated = 0
+files skipped = 0
+dir count     = 1
+dir added     = 0
+dir updated   = 1
+dir skipped   = 5
+bytes copied  = 0
+bytes skipped = 0
+errors  = 0
+bytes   = 0 B
+
+========== End of backup ===========
+

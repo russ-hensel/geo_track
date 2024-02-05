@@ -326,8 +326,6 @@ class AppGlobal( object ):
         call if necessary at end of parameters -- may make init unnecessary
         AppGlobal.parameters needs to be populated -- cls.parameters
         """
-
-
         # cls.text_editors            = [   r"D:\apps\Notepad++\notepad++.exe", r"C:\apps\Notepad++\notepad++.exe",
         #                               r"gedit", r"xed", r"leafpad"   ]   # or init from parameters or put best guess first
 

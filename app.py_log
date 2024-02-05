@@ -1,14 +1,159 @@
-2023-12-03 11:39:50,333 - App - INFO - Done config_logger .. next AppGlobal msg
-2023-12-03 11:39:50,333 - App - DEBUG - pre logger debug -- did it work
-2023-12-03 11:39:50,334 - App - DEBUG - Message from AppGlobal.print_debug >> logger level in App = 10 will show at level 10
-2023-12-03 11:39:50,334 - App - Notice - 
-2023-12-03 11:39:50,334 - App - Notice - ============================
-2023-12-03 11:39:50,334 - App - Notice - 
-2023-12-03 11:39:50,334 - App - Notice - Application: GeoTrack in mode mode_tkand version  Ver 8: 2023 12 03.01
-2023-12-03 11:39:50,335 - App - Notice - 
-2023-12-03 11:39:50,335 - App - Notice - command line arg + 0  =  d:\for_github\geo_track\main.py)
-2023-12-03 11:39:50,335 - App - Notice - current directory D:\for_github\geo_track
-2023-12-03 11:39:50,335 - App - Notice - Time now: 2023-12-03 16:39:50
-2023-12-03 11:39:50,335 - App.gui - INFO - in class GUI init for the clip_board gui_with_tabs
-2023-12-03 11:39:51,971 - App - DEBUG - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
-2023-12-03 11:39:51,971 - App - Notice - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2024-02-05 10:10:18,605 - App - INFO - Done config_logger .. next AppGlobal msg
+2024-02-05 10:10:18,605 - App - DEBUG - pre logger debug -- did it work
+2024-02-05 10:10:18,606 - App - DEBUG - Message from AppGlobal.print_debug >> logger level in App = 10 will show at level 10
+2024-02-05 10:10:18,606 - App - Notice - 
+2024-02-05 10:10:18,606 - App - Notice - ============================
+2024-02-05 10:10:18,606 - App - Notice - 
+2024-02-05 10:10:18,606 - App - Notice - Application: GeoTrack in mode mode_tkand version  Ver 10: 2024 04 01.01
+2024-02-05 10:10:18,606 - App - Notice - 
+2024-02-05 10:10:18,606 - App - Notice - command line arg + 0  =  /mnt/WIN_D/for_github/geo_track/main.py)
+2024-02-05 10:10:18,606 - App - Notice - current directory /mnt/WIN_D/for_github/geo_track
+2024-02-05 10:10:18,607 - App - Notice - Time now: 2024-02-05 15:10:18
+2024-02-05 10:11:09,611 - App - INFO - Done config_logger .. next AppGlobal msg
+2024-02-05 10:11:09,611 - App - DEBUG - pre logger debug -- did it work
+2024-02-05 10:11:09,611 - App - DEBUG - Message from AppGlobal.print_debug >> logger level in App = 10 will show at level 10
+2024-02-05 10:11:09,612 - App - Notice - 
+2024-02-05 10:11:09,612 - App - Notice - ============================
+2024-02-05 10:11:09,612 - App - Notice - 
+2024-02-05 10:11:09,612 - App - Notice - Application: GeoTrack in mode mode_tkand version  Ver 10: 2024 04 01.01
+2024-02-05 10:11:09,612 - App - Notice - 
+2024-02-05 10:11:09,613 - App - Notice - command line arg + 0  =  /mnt/WIN_D/for_github/geo_track/main.py)
+2024-02-05 10:11:09,613 - App - Notice - current directory /mnt/WIN_D/for_github/geo_track
+2024-02-05 10:11:09,613 - App - Notice - Time now: 2024-02-05 15:11:09
+2024-02-05 10:15:39,011 - App - INFO - Done config_logger .. next AppGlobal msg
+2024-02-05 10:15:39,011 - App - DEBUG - pre logger debug -- did it work
+2024-02-05 10:15:39,011 - App - DEBUG - Message from AppGlobal.print_debug >> logger level in App = 10 will show at level 10
+2024-02-05 10:15:39,012 - App - Notice - 
+2024-02-05 10:15:39,012 - App - Notice - ============================
+2024-02-05 10:15:39,012 - App - Notice - 
+2024-02-05 10:15:39,012 - App - Notice - Application: GeoTrack in mode mode_tkand version  Ver 10: 2024 04 01.01
+2024-02-05 10:15:39,012 - App - Notice - 
+2024-02-05 10:15:39,012 - App - Notice - command line arg + 0  =  geo_track.py)
+2024-02-05 10:15:39,012 - App - Notice - current directory /mnt/WIN_D/for_github/geo_track
+2024-02-05 10:15:39,012 - App - Notice - Time now: 2024-02-05 15:15:39
+2024-02-05 10:15:39,012 - App.gui - INFO - in class GUI init for the clip_board gui_with_tabs
+2024-02-05 10:15:39,475 - App - DEBUG - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2024-02-05 10:15:39,476 - App - Notice - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2024-02-05 10:16:23,189 - App - INFO - Done config_logger .. next AppGlobal msg
+2024-02-05 10:16:23,189 - App - DEBUG - pre logger debug -- did it work
+2024-02-05 10:16:23,190 - App - DEBUG - Message from AppGlobal.print_debug >> logger level in App = 10 will show at level 10
+2024-02-05 10:16:23,190 - App - Notice - 
+2024-02-05 10:16:23,190 - App - Notice - ============================
+2024-02-05 10:16:23,190 - App - Notice - 
+2024-02-05 10:16:23,190 - App - Notice - Application: GeoTrack in mode mode_tkand version  Ver 10: 2024 04 01.01
+2024-02-05 10:16:23,190 - App - Notice - 
+2024-02-05 10:16:23,191 - App - Notice - command line arg + 0  =  /mnt/WIN_D/for_github/geo_track/main.py)
+2024-02-05 10:16:23,191 - App - Notice - current directory /mnt/WIN_D/for_github/geo_track
+2024-02-05 10:16:23,191 - App - Notice - Time now: 2024-02-05 15:16:23
+2024-02-05 10:16:23,191 - App.gui - INFO - in class GUI init for the clip_board gui_with_tabs
+2024-02-05 10:16:23,703 - App - DEBUG - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2024-02-05 10:16:23,703 - App - Notice - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2024-02-05 10:18:09,066 - App - INFO - Done config_logger .. next AppGlobal msg
+2024-02-05 10:18:09,066 - App - DEBUG - pre logger debug -- did it work
+2024-02-05 10:18:09,067 - App - DEBUG - Message from AppGlobal.print_debug >> logger level in App = 10 will show at level 10
+2024-02-05 10:18:09,067 - App - Notice - 
+2024-02-05 10:18:09,067 - App - Notice - ============================
+2024-02-05 10:18:09,067 - App - Notice - 
+2024-02-05 10:18:09,067 - App - Notice - Application: GeoTrack in mode mode_tkand version  Ver 10: 2024 04 01.01
+2024-02-05 10:18:09,067 - App - Notice - 
+2024-02-05 10:18:09,067 - App - Notice - command line arg + 0  =  /mnt/WIN_D/for_github/geo_track/main.py)
+2024-02-05 10:18:09,067 - App - Notice - current directory /mnt/WIN_D/for_github/geo_track
+2024-02-05 10:18:09,067 - App - Notice - Time now: 2024-02-05 15:18:09
+2024-02-05 10:18:09,068 - App.gui - INFO - in class GUI init for the clip_board gui_with_tabs
+2024-02-05 10:18:09,496 - App - DEBUG - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2024-02-05 10:18:09,497 - App - Notice - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2024-02-05 10:18:30,205 - App - DEBUG - Sorted photo_points now len = 4
+2024-02-05 10:18:30,206 - App - DEBUG - Starting _gpx_to_map... unknown points
+2024-02-05 10:18:30,206 - App - DEBUG - gpx.tracks len  = 1
+2024-02-05 10:18:30,206 - App - DEBUG - len(track.segments)  = 1
+2024-02-05 10:18:30,207 - App - DEBUG - segment.points  = 4
+2024-02-05 10:18:30,207 - App - DEBUG - countCoords = 1
+2024-02-05 10:18:30,208 - App - DEBUG - countCoords = 2
+2024-02-05 10:18:30,208 - App - DEBUG - countCoords = 3
+2024-02-05 10:18:30,208 - App - DEBUG - countCoords = 4
+2024-02-05 10:18:30,215 - App - DEBUG - add a polyline to map len( gpx.tracks )  1
+2024-02-05 10:18:57,999 - App - DEBUG - pre logger debug -- did it work
+2024-02-05 10:18:57,999 - App - INFO - Done config_logger .. next AppGlobal msg
+2024-02-05 10:18:57,999 - App - DEBUG - pre logger debug -- did it work
+2024-02-05 10:18:58,000 - App - DEBUG - Message from AppGlobal.print_debug >> logger level in App = 10 will show at level 10
+2024-02-05 10:18:58,000 - App - Notice - 
+2024-02-05 10:18:58,000 - App - Notice - ============================
+2024-02-05 10:18:58,000 - App - Notice - 
+2024-02-05 10:18:58,001 - App - Notice - Application: GeoTrack in mode mode_tkand version  Ver 10: 2024 04 01.01
+2024-02-05 10:18:58,001 - App - Notice - 
+2024-02-05 10:18:58,001 - App - Notice - command line arg + 0  =  /mnt/WIN_D/for_github/geo_track/main.py)
+2024-02-05 10:18:58,001 - App - Notice - current directory /mnt/WIN_D/for_github/geo_track
+2024-02-05 10:18:58,001 - App - Notice - Time now: 2024-02-05 15:18:58
+2024-02-05 10:18:58,001 - App.gui - INFO - in class GUI init for the clip_board gui_with_tabs
+2024-02-05 10:18:58,411 - App - DEBUG - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2024-02-05 10:18:58,411 - App - Notice - Error messages may be in log file, check it if problems -- check parameters.py for logging level 
+2024-02-05 10:19:02,364 - App - DEBUG - Sorted photo_points now len = 29
+2024-02-05 10:19:02,365 - App - DEBUG - Starting _gpx_to_map... unknown points
+2024-02-05 10:19:02,365 - App - DEBUG - gpx.tracks len  = 1
+2024-02-05 10:19:02,365 - App - DEBUG - len(track.segments)  = 1
+2024-02-05 10:19:02,365 - App - DEBUG - segment.points  = 29
+2024-02-05 10:19:02,365 - App - DEBUG - countCoords = 1
+2024-02-05 10:19:02,365 - App - DEBUG - countCoords = 2
+2024-02-05 10:19:02,365 - App - DEBUG - countCoords = 3
+2024-02-05 10:19:02,365 - App - DEBUG - countCoords = 4
+2024-02-05 10:19:02,365 - App - DEBUG - countCoords = 5
+2024-02-05 10:19:02,365 - App - DEBUG - countCoords = 6
+2024-02-05 10:19:02,365 - App - DEBUG - countCoords = 7
+2024-02-05 10:19:02,365 - App - DEBUG - countCoords = 8
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 9
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 10
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 11
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 12
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 13
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 14
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 15
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 16
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 17
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 18
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 19
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 20
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 21
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 22
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 23
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 24
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 25
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 26
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 27
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 28
+2024-02-05 10:19:02,366 - App - DEBUG - countCoords = 29
+2024-02-05 10:19:02,368 - App - DEBUG - add a polyline to map len( gpx.tracks )  1
+2024-02-05 10:19:19,106 - App - DEBUG - Sorted photo_points now len = 29
+2024-02-05 10:19:19,107 - App - DEBUG - Starting _gpx_to_map... unknown points
+2024-02-05 10:19:19,107 - App - DEBUG - gpx.tracks len  = 1
+2024-02-05 10:19:19,107 - App - DEBUG - len(track.segments)  = 1
+2024-02-05 10:19:19,108 - App - DEBUG - segment.points  = 29
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 1
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 2
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 3
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 4
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 5
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 6
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 7
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 8
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 9
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 10
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 11
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 12
+2024-02-05 10:19:19,108 - App - DEBUG - countCoords = 13
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 14
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 15
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 16
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 17
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 18
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 19
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 20
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 21
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 22
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 23
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 24
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 25
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 26
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 27
+2024-02-05 10:19:19,109 - App - DEBUG - countCoords = 28
+2024-02-05 10:19:19,110 - App - DEBUG - countCoords = 29
+2024-02-05 10:19:19,111 - App - DEBUG - add a polyline to map len( gpx.tracks )  1

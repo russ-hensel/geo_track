@@ -78,6 +78,15 @@ class GUI(  ):
         self.logger.info("in class GUI init for the clip_board gui_with_tabs")
            # logger not currently used by her
 
+        self.NO_SORT        = 0
+        self.DATETIME_SORT  = 1
+        self.FN_SORT        = 2
+
+        self.rb_default_dict  = { "no_sort": self.NO_SORT,
+                             "datetime": self.DATETIME_SORT,
+                             "filename": self.FN_SORT,
+                            }
+
         self.text_in        = None    # init later
         self.text_out       = None    # used in controller? set below
 
@@ -186,8 +195,8 @@ class GUI(  ):
         a_frame    = self._make_browse( self.root )
         placer.place( a_frame, sticky = STICKY_ALL )
 
-        a_frame    = self._make_main_frame( self.root )
-        placer.place( a_frame, sticky = STICKY_ALL )
+        # a_frame    = self._make_main_frame( self.root )
+        # placer.place( a_frame, sticky = STICKY_ALL )
 
         a_frame    = self._make_date_filter_frame( self.root )
         placer.place( a_frame, sticky = STICKY_ALL )
@@ -211,8 +220,6 @@ class GUI(  ):
 
         gui_ttk_ext.set_icon(  self.root,  self.parameters.icon )
 
-
-
         #gui_ttk_ext.bring_to_top( self.root )
 
     #---------------------
@@ -233,9 +240,9 @@ class GUI(  ):
         a_menu.add_command( label   = "Edit Parameters File",
                             command = self.controller.os_open_parmfile )
 
-        if self.parameters.readme_fn is not None:
-            a_menu.add_command( label   = "Edit Readme",
-                                command = self.controller.os_open_readme )
+        # if self.parameters.readme_fn is not None:
+        #     a_menu.add_command( label   = "Edit Readme",
+        #                         command = self.controller.os_open_readme )
 
         if self.parameters.gui_text_log_fn:
             a_menu.add_command( label   = "Edit Gui Log",
@@ -247,7 +254,7 @@ class GUI(  ):
         a_menu.add_command( label   = "Restart",
                             command = self.controller.restart )
 
-        menubar.add_cascade( label  = "Configuration",   menu = a_menu )
+        menubar.add_cascade( label  = "MetaApp",   menu = a_menu )
 
         # ---- About ---- help
         a_menu = tk.Menu( menubar, tearoff = 0 )
@@ -261,17 +268,19 @@ class GUI(  ):
         # a_menu.add_command( label   = "Show Command Help",
         #                     command = help_function )
 
-        # partial to open other help
-        open_other_help    = partial( AppGlobal.os_open_txt_file, "./help/other_help.txt" )
-        a_menu.add_command( label   = "Show Other Help",
-                            command = open_other_help )
+        # # partial to open other help
+        # open_other_help    = partial( AppGlobal.os_open_txt_file, "./help/other_help.txt" )
+        # a_menu.add_command( label   = "Show Other Help",
+        #                     command = open_other_help )
 
-        a_menu.add_command( label   = "Show Tab Page Help",
-                            command = self.controller.open_tabp_help )
+        # a_menu.add_command( label   = "Show Tab Page Help",
+        #                     command = self.controller.open_tabp_help )
 
-        help_function    = partial( AppGlobal.os_open_txt_file, "./readme_rsh.txt" )
-        a_menu.add_command( label   = "Show Developer Notes",
-                            command = help_function )
+
+        if self.parameters.readme_fn is not None:
+            help_function    = partial( AppGlobal.os_open_txt_file, "./readme_rsh.txt" )
+            a_menu.add_command( label   = "Show Developer Notes",
+                                command = help_function )
 
         a_menu.add_command( label   = "About...",
                             command = self.open_about )
@@ -299,7 +308,7 @@ class GUI(  ):
         """
         #a_frame     = tk.Frame( parent )
         a_frame     = ttk.LabelFrame(  parent,
-                            text      = "Base file for operations ",  )
+                            text      = "Input Control",  )
         # --------
         ix_col_max      = 10
         placer          = gui_ttk_ext.PlaceInGrid( a_max = ix_col_max, by_rows = False )
@@ -314,7 +323,10 @@ class GUI(  ):
 
         #-----------------------
         widget_var          = tk.IntVar()
-        values              = [ "DirScan", "GPXfile",  "FileList", "PhotoPoints",
+        values              = [ "DirScan",
+                                "FileList",
+                                "PhotoPoints",
+                                "GPXfile",
                                 "btMap from a FileList File",
                                 "btKMZ from a FileList File",
                                 "btMap from a Directory",
@@ -354,7 +366,8 @@ class GUI(  ):
         a_widget.set( 0 )
 
         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-        self.infran_option_widget    = a_widget  # f"a_widget.get()  {a_widget.get()}" )
+        # self.infran_option_widget    = a_widget  # f"a_widget.get()  {a_widget.get()}" )
+        self.recur_limit_cb_widget   = a_widget  # f"a_widget.get()  {a_widget.get()}" )
 
         a_widget = ttk.Button( a_frame , width = button_width,  text = "Edit Input" )
         a_widget.config( command = self.edit_input_file )
@@ -370,27 +383,23 @@ class GUI(  ):
             a_frame  a frame for caller to place
         """
         #a_frame     = tk.Frame( parent )
-        a_frame     = ttk.LabelFrame(  parent,
-                            text      = "Base file for operations ",  )
+        # a_frame     = ttk.LabelFrame(  parent,
+        #                     text      = "Base file for operations ",  )
         # --------
         ix_col_max      = 10
         placer          = gui_ttk_ext.PlaceInGrid( a_max = 10, by_rows = False )
 
-
         a_frame     = ttk.LabelFrame(  parent,
-                            text      = "Date Filtering",
+                            text      = "Datetime Filtering -- broken do not use ",
                             height    = 5
                             )
         placer          = gui_ttk_ext.PlaceInGrid( a_max = 10, by_rows = False )
-        # ---- begin geo/data point options, consider a titled box
-        self.NO_SORT    = 0
-        self.DATE_SORT  = 1
-        self.FN_SORT    = 2
-
 
         # ---- start date controls
         placer.new_row()
         # placer.ix_col  += 1
+
+
         #-----------------------
         widget_var          = tk.IntVar()
         a_widget            = ttk.Checkbutton( a_frame, text="Use Dates",   variable = widget_var,
@@ -398,18 +407,17 @@ class GUI(  ):
                                                # allign = tk.E
                                                # anchor = "e"  # ng in ttk
                                                )
-
         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
         self.date_cb_var    = widget_var
 
         #-----------------------
         a_widget   =  ttk.Label( a_frame,
-                              text     = "Start Date",
+                              text     = "   Start Date",
                               justify  = tk.RIGHT,
                               anchor   = tk.E,  )
-
         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
 
+        #-----------------------
         cal    = DateEntry(    a_frame,
                                width=12,
                                background       = 'darkblue',
@@ -432,7 +440,7 @@ class GUI(  ):
 
         # ---- end date
         a_widget   =  ttk.Label( a_frame,
-                              text     = "End Date",
+                              text     = "    End Date",
                               justify  = tk.LEFT,
                               anchor   = tk.E,  )
         #placer.new_row()
@@ -451,13 +459,36 @@ class GUI(  ):
 
         cal.configure( bordercolor = "blue" )
         cal.configure( foreground  = "red" )
-
         cal.configure( date_pattern = "yyyy/mm/dd" )   # does not do what I expected
 
         cal.set_date( datetime.datetime.now() )
 
         placer.place( cal, )   #sticky = STICKY_ALL )
         self.cal_end   = cal
+
+        # ---- timezone
+        a_widget   =  ttk.Label( a_frame,
+                              text     = "    Timezone",
+                              justify  = tk.LEFT,
+                              anchor   = tk.E,  )
+        #placer.new_row()
+        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+
+
+
+        a_widget   = ttk.Combobox( a_frame, values=[
+                                            "no zone",
+                                            "local_zone",
+                                            "add_local",
+                                            "other 2" ],
+                                            #width = 50,
+                                            )
+
+        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+        self.timzone_widget     = a_widget
+        a_widget.set( "no zone")
+        txt     = a_widget.get()
+        print( "****************************" , txt )
 
         return a_frame
 
@@ -476,9 +507,6 @@ class GUI(  ):
                             )
         placer          = gui_ttk_ext.PlaceInGrid( a_max = 10, by_rows = False )
         # ---- begin geo/data point options, consider a titled box
-        self.NO_SORT    = 0
-        self.DATE_SORT  = 1
-        self.FN_SORT    = 2
 
 
         # ---- sort radiobuttons and more
@@ -491,9 +519,9 @@ class GUI(  ):
         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
 
         #--------
-        a_widget            = ttk.Radiobutton( a_frame, text ="Date Sort",
+        a_widget            = ttk.Radiobutton( a_frame, text ="Datetime Sort",
                                       variable = widget_var,
-                                      value    = self.DATE_SORT, )
+                                      value    = self.DATETIME_SORT, )
         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
 
         #--------
@@ -502,7 +530,9 @@ class GUI(  ):
                                       value    = self.FN_SORT, )
         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
 
-        self.sort_rb_var   = widget_var
+        self.sort_rb_var  = widget_var
+
+        self.set_sort( AppGlobal.parameters.default_sort   )
 
         #-----------------------
         widget_var          = tk.IntVar()
@@ -520,17 +550,19 @@ class GUI(  ):
         #                       anchor   = tk.E,  )
         # placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
 
-        #-----------------------
-        widget_var          = tk.IntVar()
-        values              = [ 0, 1, 2 ]
-        a_widget            = ttk.Combobox( a_frame,
-                                            text="Dir Recursion \nLimit", # does not show
-                                            values = values,
-                                               )
-        a_widget.set( 0 )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-        self.recur_limit_cb_widget    = a_widget  # f"a_widget.get()  {a_widget.get()}" ) gets text
-        self.recur_limit_var          = widget_var
+# =============================================================================
+#         #-----------------------
+#         widget_var          = tk.IntVar()
+#         values              = [ 0, 1, 2 ]
+#         a_widget            = ttk.Combobox( a_frame,
+#                                             text="Dir Recursion \nLimit", # does not show
+#                                             values = values,
+#                                                )
+#         a_widget.set( 0 )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#         self.recur_limit_cb_widget    = a_widget  # f"a_widget.get()  {a_widget.get()}" ) gets text
+#         self.recur_limit_var          = widget_var
+# =============================================================================
 
         return a_frame
 
@@ -544,10 +576,10 @@ class GUI(  ):
         """
         #a_frame     = tk.Frame( parent )
         a_frame     = ttk.LabelFrame(  parent,
-                            text      = "Lat Long Filter",
+                            text      = " Lat( N/S ) Long( E/W ) Filter ",
                             height    = 5    )
         width_long_lat  = 50
-        values_long     = (
+        values_lat    = (
             ["Ignore",
              "Australia,      Sydney          =  -33.8688",
              "Brazil,         Rio de Janeiro  =  -22.9068",
@@ -570,6 +602,7 @@ class GUI(  ):
              "USA,     NC     Charlotte       =  35.2271",
              "USA,     NY     New York City   =  40.7128",
              "USA,     OH     Columbus        =  39.9612",
+             "USA,     MA     Boston          =  42.3611",
              "USA,     PA     Philadelphia    =  39.9526",
              "USA,     TX     Houston         =  29.7604",
              "USA,     TX     San Antonio     =  29.4241",
@@ -579,37 +612,38 @@ class GUI(  ):
              "USA,     TX     El Paso         =  31.7619",
              "USA,     WA     Seattle         =  47.6062"  ]
             )
-        values_lat      = (
+        values_long      = (
             [ "Ignore",
               "Australia:      Sydney          = 151.2093",
               "Brazil:         Rio de Janeiro  = -43.1729",
               "Canada:         Toronto         = -79.3832",
               "China:          Beijing         = 116.4074",
               "France:         Paris           =   2.3522",
-              "India:          Mumbai          =   72.8777",
-              "Japan:          Tokyo           =   139.6917",
-              "South Africa:   Johannesburg  =   28.0473",
-              "United Kingdom: London  =   -0.1278",
-              "USA:    AZ,     Phoenix  =   -112.074",
-              "USA:    CA,     Los Angeles  =   -118.2437",
-              "USA:    CA,     San Diego  =   -117.1611",
-              "USA:    CA,     San Jose  =   -121.8863",
-              "USA:    CA,     San Francisco  =   -122.4194",
-              "USA:    CO,     Denver  =   -104.9903",
-              "USA:    FL,     Jacksonville  =   -81.6557",
-              "USA:    IL,     Chicago  =   -87.6298",
-              "USA:    IN,     Indianapolis  =   -86.1581",
-              "USA:    NC,     Charlotte  =   -80.8431",
-              "USA:    NY,     New York City  =   -74.006",
-              "USA:    OH,     Columbus  =   -82.9988",
-              "USA:    PA,     Philadelphia  =   -75.1652",
-              "USA:    TX,     Houston  =   -95.3698",
-              "USA:    TX,     San Antonio  =   -98.4936",
-              "USA:    TX,     Dallas  =   -96.797",
-              "USA:    TX,     Austin  =   -97.75",
-              "USA:    TX,     Fort Worth  =   -97.3308",
-              "USA:    TX,     El Paso  =   -106.485",
-              "USA:    WA,     Seattle  =   -122.3321" ]
+              "India:          Mumbai          =  72.8777",
+              "Japan:          Tokyo           = 139.6917",
+              "South Africa:   Johannesburg    =  28.0473",
+              "United Kingdom: London          =  -0.1278",
+              "USA:    AZ,     Phoenix         = -112.074",
+              "USA:    CA,     Los Angeles     = -118.2437",
+              "USA:    CA,     San Diego       = -117.1611",
+              "USA:    CA,     San Jose        = -121.8863",
+              "USA:    CA,     San Francisco   = -122.4194",
+              "USA:    CO,     Denver          = -104.9903",
+              "USA:    FL,     Jacksonville    =  -81.6557",
+              "USA:    IL,     Chicago         =  -87.6298",
+              "USA:    IN,     Indianapolis    =  -86.158",
+              "USA:    NC,     Charlotte       =  -80.8431",
+              "USA:    NY,     New York City   =  -74.006",
+              "USA:    OH,     Columbus        =  -82.999",
+              "USA:    MA,     Boston          =  -71.057",
+              "USA:    PA,     Philadelphia    =  -75.1652",
+              "USA:    TX,     Houston         =  -95.3698",
+              "USA:    TX,     San Antonio     =  -98.4936",
+              "USA:    TX,     Dallas          =  -96.797",
+              "USA:    TX,     Austin          =  -97.75",
+              "USA:    TX,     Fort Worth      =  -97.3308",
+              "USA:    TX,     El Paso         =  -106.485",
+              "USA:    WA,     Seattle         =  -122.332" ]
             )
 
         # --------
@@ -622,7 +656,7 @@ class GUI(  ):
 
         # ---- Min Long
         widget_var          = tk.IntVar()
-        a_widget            = ttk.Label( a_frame, text="Min Long",
+        a_widget            = ttk.Label( a_frame, text="  Min Long",
                                                # justify  = tk.RIGHT,)  #command=cb_cb
                                                # allign = tk.E
                                                # anchor = "e"  # ng in ttk
@@ -633,9 +667,6 @@ class GUI(  ):
 
         #-----------------------
         widget_var          = tk.IntVar()
-
-
-
 
         #values     = ["0", "1", "2", "3", "4", "5", "6", "7"]
 
@@ -650,7 +681,7 @@ class GUI(  ):
 
         #---- Max Long
         widget_var          = tk.IntVar()
-        a_widget            = ttk.Label( a_frame, text="Max Long",
+        a_widget            = ttk.Label( a_frame, text="  Max Long",
                                                )
         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
         #self.min_lat_check_var    = widget_var
@@ -670,7 +701,7 @@ class GUI(  ):
 
         # ---- Min Lat
         widget_var          = tk.IntVar()
-        a_widget            = ttk.Label( a_frame, text="Min Lat",
+        a_widget            = ttk.Label( a_frame, text="  Min Lat",
                                                # justify  = tk.RIGHT,)  #command=cb_cb
                                                )
         placer.new_row()
@@ -679,7 +710,7 @@ class GUI(  ):
 
         #-----------------------
         widget_var          = tk.IntVar()
-        values     = values_lat
+        values              = values_lat
         a_widget            = ttk.Combobox( a_frame,
                                             text="zxzdddx", # does not show
                                             width  = width_long_lat,
@@ -691,7 +722,7 @@ class GUI(  ):
 
         #---- Max Lat
         #widget_var          = tk.IntVar()
-        a_widget            = ttk.Label( a_frame, text="Max Lat",
+        a_widget            = ttk.Label( a_frame, text="  Max Lat",
                                                # justify  = tk.RIGHT,)  #command=cb_cb
                                                # allign = tk.E
                                                # anchor = "e"  # ng in ttk
@@ -745,7 +776,19 @@ class GUI(  ):
         button_width = 20
 
         # ---- Checkbuttons
-        #-----------------------
+        #---- gpx
+        widget_var          = tk.IntVar()
+        a_widget            = ttk.Checkbutton( a_frame, text ="GPX=Map",   variable = widget_var,
+                                              ) # justify  = tk.RIGHT,)  #command=cb_cb  )
+        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+
+        #self.add_to_dffl_cb_var    = widget_var
+        widget_var.set( 1 )     # default this on, later look at parameters !!
+        self.folium_var   = widget_var
+
+
+
+        #---- kmz
         widget_var          = tk.IntVar()
         a_widget            = ttk.Checkbutton( a_frame, text ="KMZ=GoogleEarth",   variable = widget_var,
                                               ) # justify  = tk.RIGHT,)  #command=cb_cb  )
@@ -753,16 +796,8 @@ class GUI(  ):
         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
         self.google_earth_var   = widget_var
 
-        #-----------------------
-        widget_var          = tk.IntVar()
-        a_widget            = ttk.Checkbutton( a_frame, text ="GPX=Map",   variable = widget_var,
-                                              ) # justify  = tk.RIGHT,)  #command=cb_cb  )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
 
-        #self.add_to_dffl_cb_var    = widget_var
-        self.folium_var   = widget_var
-
-        #-----------------------
+        # ---- file list
         widget_var          = tk.IntVar()
         a_widget            = ttk.Checkbutton( a_frame, text ="FileListFile",   variable = widget_var,
                                               ) # justify  = tk.RIGHT,)  #command=cb_cb  )
@@ -805,79 +840,90 @@ class GUI(  ):
 
         return a_frame
 
-    # ------------------------------------------
-    def _make_main_frame( self, parent,  ):
-        """
-            parent   a frame to be the parent of widgets
-        returns
-            a_frame  a frame for caller to place
-        """
-        #a_frame     = ttk.Frame( parent, height = 100 )  # height not currently effective
-        a_frame     = ttk.LabelFrame(  parent,
-                             text      = "ttk.LabelFrame",
-                           )
-        # --------
-        ix_col_max  = 10
-        placer      = gui_ttk_ext.PlaceInGrid( a_max = ix_col_max, by_rows = False )
+# =============================================================================
+#     # ------------------------------------------
+#     def _make_main_frame( self, parent,  ):
+#         """
+#             parent   a frame to be the parent of widgets
+#         returns
+#             a_frame  a frame for caller to place
+#         """
+#         #a_frame     = ttk.Frame( parent, height = 100 )  # height not currently effective
+#         a_frame     = ttk.LabelFrame(  parent,
+#                              text      = "ttk.LabelFrame",
+#                            )
+#         # --------
+#         ix_col_max  = 10
+#         placer      = gui_ttk_ext.PlaceInGrid( a_max = ix_col_max, by_rows = False )
+#
+#         # ---- Buttons
+#         button_width = 20
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "Map from a FileList File" )
+#         a_widget.config( command = AppGlobal.controller.gui_make_map_from_filelist )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "KMZ from a FileList File" )
+#         a_widget.config( command = AppGlobal.controller.gui_make_kmz_from_filelist )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "Map from a Directory" )
+#         a_widget.config( command = AppGlobal.controller.gui_make_map_from_dir )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "KMZ from a Directory" )
+#         a_widget.config( command = AppGlobal.controller.gui_make_kmz_from_dir )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "Map from *.GPX file" )
+#         a_widget.config( command = AppGlobal.controller.gui_make_map_from_gpx_file )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "Open Default Ffl" )
+#         a_widget.config( command = AppGlobal.controller.gui_open_dffl )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "Open Browse File" )
+#         a_widget.config( command = AppGlobal.controller.gui_open_browse_file )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#          # ---- new row infranview
+#         placer.new_row()
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "Infranview" )
+#         a_widget.config( command = AppGlobal.controller.gui_open_irfanview )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "Picture Frame" )
+#         a_widget.config( command = AppGlobal.controller.gui_open_dffl )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         placer.new_row()
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "test_gets" )
+#         a_widget.config( command = self.test_some_gets )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "Test>Makeup GPX" )
+#         a_widget.config( command = AppGlobal.controller.makeup_gpx )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         a_widget = ttk.Button( a_frame , width = button_width,  text = "Test 2" )
+#         a_widget.config( command = AppGlobal.controller.test2 )
+#         placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
+#
+#         return a_frame
+#
+# =============================================================================
+    # ---- sets
+    # --------------------------
+    def set_sort( self, default_string ):
+        value      = self.rb_default_dict[default_string]
+        if value:
+            self.sort_rb_var.set( value )
+        else:
+            1/0 # change to logging !!
 
-        # ---- Buttons
-        button_width = 20
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "Map from a FileList File" )
-        a_widget.config( command = AppGlobal.controller.gui_make_map_from_filelist )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "KMZ from a FileList File" )
-        a_widget.config( command = AppGlobal.controller.gui_make_kmz_from_filelist )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "Map from a Directory" )
-        a_widget.config( command = AppGlobal.controller.gui_make_map_from_dir )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "KMZ from a Directory" )
-        a_widget.config( command = AppGlobal.controller.gui_make_kmz_from_dir )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "Map from *.GPX file" )
-        a_widget.config( command = AppGlobal.controller.gui_make_map_from_gpx_file )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "Open Default Ffl" )
-        a_widget.config( command = AppGlobal.controller.gui_open_dffl )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "Open Browse File" )
-        a_widget.config( command = AppGlobal.controller.gui_open_browse_file )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-         # ---- new row infranview
-        placer.new_row()
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "Infranview" )
-        a_widget.config( command = AppGlobal.controller.gui_open_irfanview )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "Picture Frame" )
-        a_widget.config( command = AppGlobal.controller.gui_open_dffl )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        placer.new_row()
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "test_gets" )
-        a_widget.config( command = self.test_some_gets )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "Test>Makeup GPX" )
-        a_widget.config( command = AppGlobal.controller.makeup_gpx )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        a_widget = ttk.Button( a_frame , width = button_width,  text = "Test 2" )
-        a_widget.config( command = AppGlobal.controller.test2 )
-        placer.place(  a_widget, columnspan = None,   rowspan = None, sticky = None )
-
-        return a_frame
-
-    # ---- gets ----------------------------
+    # ---- gets and sets  ----------------------------
     # --------------------------
     def test_some_gets( self ):
         """
@@ -1034,6 +1080,15 @@ class GUI(  ):
         rb_index   = self.sort_rb_var.get(  )
         print( f"rb indes is {rb_index}" )
         return rb_index
+
+    # --------------------------
+    def set_sort( self, default_string ):
+        value      = self.rb_default_dict[default_string]
+        if value:
+            self.sort_rb_var.set( value )
+        else:
+            1/0 # change to logging !!
+
 
     # --------------------------
     def get_info( self ):

@@ -2,7 +2,6 @@
 #! /usr/bin/python3
 #!python3
 
-
 """
 this is the controller module for the geotracker app
 
@@ -25,10 +24,12 @@ import gpxpy
 import gpxpy.gpx
 import pathlib
 from   functools import partial
+from   pathlib   import Path
 import folium
 # from folium.plugins import HeatMap
 import webbrowser
 import simplekml
+
 
 
 #----- local imports
@@ -40,7 +41,7 @@ import photo_ext
 import app_exceptions
 import file_filters
 import dir_tree_explore
-import file_utils
+import photo_file_utils
 from   app_global import AppGlobal
 
 # ---- end imports
@@ -62,7 +63,10 @@ class App( app_abc.AppABC ):
     this class is the "main" or controller for the whole app
     to run see end of this file
     it is the controller of an mvc app
+
+    !! need super call here
     """
+
     def __init__( self,  q_to_splash = None, q_from_splash = None  ):
         """
         usual init for main app
@@ -70,7 +74,7 @@ class App( app_abc.AppABC ):
         splash screen which is of not help unless we sleep the init
         """
         self.app_name          = "GeoTrack"
-        self.version           = "Ver 8: 2023 12 03.01"
+        self.version           = "Ver 10: 2024 04 01.01"
         self.app_version       = self.version   # get rid of dupe at some point... app_version in gui_ext
         self.app_url           = "www.where"
         # clean out dead
@@ -106,18 +110,6 @@ class App( app_abc.AppABC ):
             pass
 
         self.parameters     = parameters.Parameters( )
-             # open early as may effect other parts of code
-
-        #if  self.parameters.set_default_path_here:    # Now change the directory to location of this file
-#        if True:
-#            py_path    = self.parameters.running_on.py_path
-#
-#            # retval = os.getcwd()
-#            # print( f"Directory now            {retval}")
-#
-#            print( f"Directory now ( sw if not ''  {os.getcwd()} change to >>{py_path}<<")
-#            if py_path != "":
-#                os.chdir( py_path )
 
         self.config_logger()
         self.prog_info()
@@ -125,7 +117,6 @@ class App( app_abc.AppABC ):
 
         self.a_clipper      = clipper.make_clipper( "pyperclip" )
         self.gui            = gui.GUI()
-            # self.gui.gui_1()
 
         self._finish_gui( )
 
@@ -177,50 +168,50 @@ class App( app_abc.AppABC ):
         # !! and may want more close activities, search around on web
         self.close_logger()
 
-    # ------------------------------------------
-    def config_logger( self, ):
-        """
-        configure the python logger
-        return change of state
-        !! consider putting in app global, include close
-        """
-        AppGlobal.logger_id     = "App"
-        logger                  = logging.getLogger( AppGlobal.logger_id )
-        logger.handlers         = []  # get stuff to close from here
+    # # ------------------------------------------
+    # def config_logger( self, ):
+    #     """
+    #     configure the python logger
+    #     return change of state
+    #     !! consider putting in app global, include close
+    #     """
+    #     AppGlobal.logger_id     = "App"
+    #     logger                  = logging.getLogger( AppGlobal.logger_id )
+    #     logger.handlers         = []  # get stuff to close from here
 
-        logger.setLevel( self.parameters.logging_level )
+    #     logger.setLevel( self.parameters.logging_level )
 
-        # create the logging file handler
-        file_handler = logging.FileHandler( self.parameters.pylogging_fn )
+    #     # create the logging file handler
+    #     file_handler = logging.FileHandler( self.parameters.pylogging_fn )
 
-        formatter    = logging.Formatter( '%(asctime)s - %(name)s - %(levelname)s - %(message)s' )
-        file_handler.setFormatter( formatter )
+    #     formatter    = logging.Formatter( '%(asctime)s - %(name)s - %(levelname)s - %(message)s' )
+    #     file_handler.setFormatter( formatter )
 
-        # add handler to logger object -- want only one add may be a problem
-        logger.addHandler( file_handler )
-        msg  = "pre logger debug -- did it work"
-        AppGlobal.logger.debug( msg )
+    #     # add handler to logger object -- want only one add may be a problem
+    #     logger.addHandler( file_handler )
+    #     msg  = "pre logger debug -- did it work"
+    #     AppGlobal.logger.debug( msg )
 
-        logger.info( "Done config_logger .. next AppGlobal msg" )
-        #rint( "configed logger", flush = True )
-        self.logger      = logger   # for access in rest of class?
-        AppGlobal.set_logger( logger )
+    #     logger.info( "Done config_logger .. next AppGlobal msg" )
+    #     #rint( "configed logger", flush = True )
+    #     self.logger      = logger   # for access in rest of class?
+    #     AppGlobal.set_logger( logger )
 
-        msg  = ( f"Message from AppGlobal.print_debug >> logger level in App = "
-                 f"{self.logger.level} will show at level 10"
-                )
-        AppGlobal.print_debug( msg )
+    #     msg  = ( f"Message from AppGlobal.print_debug >> logger level in App = "
+    #              f"{self.logger.level} will show at level 10"
+    #             )
+    #     AppGlobal.print_debug( msg )
 
-    # ------------------------------------------
-    def close_logger( self, ):
-        """
-        configure the python logger
-        return change of state
-        !! consider putting in app global, include close
-        """
-        logger  = AppGlobal.logger
-        for a_handler in logger.handlers:
-            a_handler.close()
+    # # ------------------------------------------
+    # def close_logger( self, ):
+    #     """
+    #     configure the python logger
+    #     return change of state
+    #     !! consider putting in app global, include close
+    #     """
+    #     logger  = AppGlobal.logger
+    #     for a_handler in logger.handlers:
+    #         a_handler.close()
 
     # # --------------------------------------------
     # def prog_info( self,  ):
@@ -249,6 +240,8 @@ class App( app_abc.AppABC ):
     #     logger.log( fll, msg  )
 
     #     start_ts     = time.time()
+
+
     #     dt_obj       = datetime.datetime.utcfromtimestamp( start_ts )
     #     string_rep   = dt_obj.strftime('%Y-%m-%d %H:%M:%S')
     #     msg          = f"Time now: {string_rep}"
@@ -312,33 +305,8 @@ class App( app_abc.AppABC ):
 
         """
         option  = self.gui.get_input_option()
-        if   option == "btMap from a FileList File":
-            pass
-            return
 
-        elif option == "btKMZ from a FileList File":
-            pass
-            return
 
-        elif option == "btMap from a Directory":
-            self.gui_make_map_from_dir()
-            return
-
-        elif option == "btKMZ from a FileList File":
-            pass
-            return
-
-        elif option == "btKMZ from a Directory":
-            pass
-            return
-
-        elif option == "btOpen Default Ffl":
-            pass
-            return
-
-        elif option == "btOpen Browse File":
-            pass
-            return
 
         gui          = AppGlobal.gui
         start_time   = time.time()
@@ -353,50 +321,17 @@ class App( app_abc.AppABC ):
         print( msg )
 
         try:
+            # ---- "DirScan"
             option  = self.gui.get_input_option()
             if option ==   "DirScan" :
-
                 self._input_dir_scan()
-                # #self.gui_make_map_from_dir()
-
-                # #return
-                # file_name    = self.gui.get_browse()
-                # msg     = f"Make map from a directory using file >{file_name}<"
-                # gui.write_gui( msg )
-                # file_list       = self._dir_to_fl( file_name )
-                # # what do do with file_list, write to file probably
-                # photo_points    = self._fl_to_pp( file_list )
-                # print( f"len(photo_points) {len(photo_points)} ")
-
-                # if len( photo_points ) == 0:
-                #     msg  = "After filtering no points left to map"
-                #     gui.write_gui( msg )
-                #     return    # thow except might be better
-
-
-                # gpx             = self._pp_to_gpx( photo_points )
-
-                # if folium_out:
-                #     xxx             = self._gpx_to_map( gpx )
-
-                # if google_out:
-                #     msg   = "Google earth not yet supported for a FileList -- but will give a try"
-                #     gui.write_gui( msg )
-                #     # gpx          = self._make_gpx_from_data( gpx_data )
-                #     self._kml_file_from_data( photo_points )
-                #     #zz use new func
-
-                #     # gpx_data     = self._sort_filter_gpx_data( gpx_data )
-
-
-
-                # msg   = "done DirScan"
-                # gui.write_gui( msg )
-                # print( msg )
 
             # ---- "GPXfile"
             elif option ==   "GPXfile" :
-                self.gui_make_map_from_gpx_file()
+                # old
+                #self.gui_make_map_from_gpx_file()
+                # new wilt be   _input_gpx_file
+                self._input_gpx_file()
 
             # ---- "FileList"
             elif option ==   "FileList" :
@@ -444,12 +379,11 @@ class App( app_abc.AppABC ):
         file_list        = self._dir_to_fl( file_name )
         # what do do with file_list, write to file probably
         photo_points     = self._fl_to_pp( file_list )
-        print( f"len(photo_points) {len(photo_points)} ")
+        print( f"_input_dir_scan len(photo_points) {len(photo_points)} ")
 
-        if len( photo_points ) == 0:
-            msg  = "After filtering no points left to map"
-            gui.write_gui( msg )
-            return    # thow except might be better
+        photo_points    = self._pp_to_filtered_pp( photo_points )
+
+        photo_points    = self._pp_to_sorted_pp( photo_points )
 
         gpx             = self._pp_to_gpx( photo_points )
 
@@ -457,13 +391,8 @@ class App( app_abc.AppABC ):
             xxx         = self._gpx_to_map( gpx )
 
         if google_out:
-            msg   = "Google earth not yet supported for a dir scan  -- but will give a try"
-            gui.write_gui( msg )
-            # gpx          = self._make_gpx_from_data( gpx_data )
-            # self._kml_file_from_data( photo_points )
             self._pp_to_kmz( photo_points )
 
-        # gpx_data
         msg   = "done DirScan"
         gui.write_gui( msg )
         print( msg )
@@ -474,7 +403,59 @@ class App( app_abc.AppABC ):
         process when the input is a file list
 
         """
-        gui             = AppGlobal.gui
+        gui          = AppGlobal.gui
+        google_out   = gui.get_output_google()
+        msg          = f"get google optput {google_out} "
+        print( msg )
+
+        folium_out   = gui.get_output_folium()
+        msg          = f"get folium_out {folium_out} "
+        print( msg )
+
+        file_name       = gui.get_browse()
+        a_path          = Path( file_name )
+        if  a_path.suffix != ".txt":
+            msg   = f"Your file for the filelist is not a .txt file, which is required. Operation terminated."
+            self.gui.write_gui( msg )
+            raise app_exceptions.ReturnToGui( msg )
+
+        file_list       = photo_file_utils.read_flf_to_fl( file_name )
+
+        msg     = f"Read file list: file list len = {len(file_list)}"
+        AppGlobal.gui.write_gui( msg )
+
+        photo_points    = self._fl_to_pp( file_list )
+        print( f"_input_file_list len(photo_points) {len(photo_points)} ")
+
+        photo_points    = self._pp_to_filtered_pp( photo_points )
+
+        photo_points    = self._pp_to_sorted_pp( photo_points )
+
+        gpx             = self._pp_to_gpx( photo_points )
+
+        if folium_out:
+            xxx             = self._gpx_to_map( gpx )
+
+        if google_out:
+            # msg   = "Google earth not yet supported for a FileList -- but will give a try"
+            # gui.write_gui( msg )
+            # gpx          = self._make_gpx_from_data( gpx_data )
+
+            self._pp_to_kmz( photo_points )
+            # gpx_data     = self._sort_filter_gpx_data( gpx_data )
+
+        msg    = "done FileList"
+        gui.write_gui( msg )
+        print( msg )
+
+    # ------------------------------------------
+    def _input_gpx_file( self,  ):
+        """
+        in this version we are going to make phopt_plus points with no file name
+        so sorts.... filter can work this replaces old gui_make_map_from_gpx_file()
+
+        """
+        gui          = AppGlobal.gui
         google_out   = gui.get_output_google()
         msg          = f"get google optput {google_out} "
         print( msg )
@@ -484,39 +465,57 @@ class App( app_abc.AppABC ):
         print( msg )
 
 
-        file_name       = gui.get_browse()
-        file_list       = file_utils.read_flf_to_fl( file_name )
-        photo_points    = self._fl_to_pp( file_list )
-        print( f"len(photo_points) {len(photo_points)} ")
+        file_name    = self.gui.get_browse()
+        msg     = f"Make map from *.GPX file using file {file_name}"
+        AppGlobal.gui.write_gui( msg )
 
-        if gui.get_use_dates(    ):
-            a_filter_function  = self.get_date_filter_function ()
-            photo_points       = self._pp_filter_on_fun( photo_points ,
-                                                   a_filter_function )
+        try:
+            # gpx          = self._gpx_from_gpxfile( file_name )
+            # self._gpx_to_map( gpx )
+            photo_points    = self._gpx_to_pp( file_name )
+            print( f"_input_gpx_file len(photo_points) {len(photo_points)} ")
 
-        if len( photo_points ) == 0:
-            msg  = "After filtering no points left to map"
+            photo_points    = self._pp_to_filtered_pp( photo_points )
+            photo_points    = self._pp_to_sorted_pp( photo_points )
+
+            gpx             = self._pp_to_gpx( photo_points )
+
+            if folium_out:
+                xxx             = self._gpx_to_map( gpx )
+
+            if google_out:
+                # msg   = "Google earth not yet supported for a FileList -- but will give a try"
+                # gui.write_gui( msg )
+                # gpx          = self._make_gpx_from_data( gpx_data )
+
+                self._pp_to_kmz( photo_points )
+                # gpx_data     = self._sort_filter_gpx_data( gpx_data )
+
+            msg    = "done FileList"
             gui.write_gui( msg )
-            return    # thow except might be better
+            print( msg )
 
-        gpx             = self._pp_to_gpx( photo_points )
+        except app_exceptions.ReturnToGui  as an_except:
+            msg  = f"File Load failed, {an_except.why}"
+            print( msg )
+            AppGlobal.gui.write_gui( msg )
 
-        if folium_out:
-            xxx             = self._gpx_to_map( gpx )
+        except app_exceptions.ApplicationError  as an_except:
+            msg  = f"File Load failed, {an_except.why}"
+            print( msg )
+            AppGlobal.gui.write_gui( msg )
 
-        if google_out:
-            msg   = "Google earth not yet supported for a FileList -- but will give a try"
-            gui.write_gui( msg )
-            # gpx          = self._make_gpx_from_data( gpx_data )
+        # check next in caller
+        # end_time    = time.time()
+        # run_time    = round( end_time - start_time, 2 )
+        # msg         = f"End of Make Map from GPX file... run time {run_time} sec"
+        # print( msg )
+        # AppGlobal.gui.write_gui( msg )
 
-            #zz use new func
-            self._pp_to_kmz( photo_points )
-            # gpx_data     = self._sort_filter_gpx_data( gpx_data )
+        # 1/0    # untill finished
 
 
-        msg    = "done FileList"
-        gui.write_gui( msg )
-        print( msg )
+
 
     # ------------------------------------------
     def _input_photo_points( self,  ):
@@ -528,21 +527,15 @@ class App( app_abc.AppABC ):
         gui        = AppGlobal.gui
         file_name  = gui.get_browse()
 
-        photo_points  = file_utils.read_photo_points( file_name, )
+        photo_points  = photo.file_utils.read_photo_points( file_name, )
         print( f"PhotoPoints len(photo_points) {len(photo_points)} ")
 
-        if gui.get_use_dates(    ):
-            a_filter_function  = self.get_date_filter_function ()
-            photo_points       = self._pp_filter_on_fun( photo_points ,
-                                                   a_filter_function )
+        photo_points    = self._pp_to_filtered_pp( photo_points )
 
-        a_filter_function  = self.get_long_lat_filter_function()
-        photo_points       = self._pp_filter_on_fun( photo_points ,
-                                               a_filter_function )
+        photo_points    = self._pp_to_sorted_pp( photo_points )
 
         gpx             = self._pp_to_gpx( photo_points )
         self._gpx_to_map( gpx )
-
 
     # ---- New Gui Transforms  --------------------------------------
     def _dir_to_fl( self, file_in_dir_fn ):
@@ -664,6 +657,76 @@ class App( app_abc.AppABC ):
         self.gui.write_gui( msg )
 
         return file_list
+    # ------------------------------------------
+    def  _gpx_to_pp( self, file_name ):
+        """
+        from a gph file   --> list of photo points
+        to do ..... write out photo points
+        Purpose:
+            make a gpx_data ( list of photo plus item ) from the gpx file
+            for now we are just using the tracks in the file and their
+            segments, see code
+        Arguments
+            file_name   name of a gpx file
+
+        Return
+            photo_points     .... points to build a gpx file
+        """
+        # next migh be a function ??
+        # chdek none
+        if file_name is None:
+            msg   = "File name is None, so cannot be processed to make a gpx"
+            self.gui.write_gui( msg )
+            raise app_exceptions.ReturnToGui( msg )
+
+        # check extension
+        file_path    = pathlib.Path( file_name )
+
+        if file_path.suffix != ".gpx":  # consider lower
+            msg   = f"File name {file_name} is a not gpx file, so cannot be processed to make a gpx"
+            self.gui.write_gui( msg )
+            raise app_exceptions.ReturnToGui( msg )
+
+        # check exist
+        if not file_path.exists():
+            msg   = f"File name {file_name} is not a file that exists, so cannot be processed to make a gpx"
+            self.gui.write_gui( msg )
+            raise app_exceptions.ReturnToGui( msg )
+
+        with open( file_path, 'r' ) as readFile:
+            gpx = gpxpy.parse( readFile )
+            # now we need to use gpxpy to get list of points which may be what is in the gpx object or not
+            photo_points  = []
+
+            # extracts the latitude and longitude coordinates of each point in each track segment, appending them to separate lists called lats and lngs
+            for track in gpx.tracks: # iterable that contains all of the tracks in the GPX file  self.tracks: List[GPXTrack] = []
+                for segment in track.segments: # each track is composed of one or more track segments, which are represented by the track.segments iterable
+                    for point in segment.points: # each track segment consists of a series of GPS points that make up the track
+                                                 # self.segments: List[GPXTrackSegment] = []
+                                                 # points: Optional[List[GPXTrackPoint]]
+                                                  # for points: __slots__ = ('latitude', 'longitude', 'elevation', 'time', 'course',
+                                                              # 'speed', 'magnetic_variation', 'geoid_height', 'name',
+                                                              # 'comment', 'description', 'source', 'link', 'link_text',
+                                                              # 'symbol', 'type', 'type_of_gpx_fix', 'satellites',
+                                                              # 'horizontal_dilution', 'vertical_dilution',
+                                                              # 'position_dilution', 'age_of_dgps_data', 'dgps_id',
+                                                              # 'link_type', 'extensions')
+                        a_pp     = photo_ext.PhotoPlus( None )
+                        # !! check for None in next  -- or make sure gpx is clean
+                        a_pp.long       = point.longitude
+                        a_pp.lat        = point.latitude
+                        a_pp.datetime   = point.time           # seems to be a datetime
+                        a_pp.latitude   = True
+
+                        photo_points.append( a_pp )
+
+        msg    = f"Made photo_points from {file_name} len = len( photo_points ) "
+        print( msg )
+        self.gui.write_gui( msg )
+        AppGlobal.logger.debug( msg )
+
+        return photo_points
+
 
     # ------------------------------------------
     def _fl_to_pp( self, file_list ):  # return photo_points
@@ -683,10 +746,18 @@ class App( app_abc.AppABC ):
         #rint( self.file_list )
         photo_points    = []  #  photo plus instances in list
         # next is not fast may want to see what is slowing it down
-        for i_file in file_list:
+        for ix, i_file in enumerate( file_list ):
+            # i_file is a line in the file list file and should be a file name or a comment
 
             if i_file.startswith( "#"):
                 print( i_file )
+                continue
+
+            if not os.path.exists( i_file ):
+                msg   = f"File Name {i_file} references a file that seems not to exist"
+                self.gui.write_gui( msg )
+                AppGlobal.logger.log( 10 ,  msg )  # how do I get the right levels ?? cocuemnt
+                print( msg )
                 continue
 
             i_file       = i_file.split(  maxsplit = 1  )[0] #allow content after filename ( control with gui or parametes )
@@ -700,10 +771,10 @@ class App( app_abc.AppABC ):
         # print( msg )
         #AppGlobal.gui.write_gui( msg )
 
-        file_utils.write_photo_points(
+        photo_file_utils.write_photo_points(
             file_name      =  AppGlobal.parameters.default_photo_points_fn,
             photo_points   = photo_points,
-            comment_lines  = None )
+            comments       = None )
 
         return photo_points
 
@@ -755,7 +826,7 @@ class App( app_abc.AppABC ):
         photo points are turned into a gpx object which is , read the code
         return gpx object
         """
-        msg     = f"_pp_gpx make gpx object from photo_points  list"
+        msg     = f"_pp_gpx make gpx object from photo_points  list {len( photo_points )} "
         AppGlobal.gui.write_gui( msg )
         # Create a GPX object
         gpx = gpxpy.gpx.GPX()
@@ -779,19 +850,19 @@ class App( app_abc.AppABC ):
                                          longitude = photo_point.long,
                                              )
             #  !! change to use dat in photo_point
-            a_track_point.time      = datetime.datetime( 2023, 10, 26, 10, 0, 0 )
+            a_track_point.time      = datetime.datetime( 2023, 10, 26, 10, 0, 0 )   # !! fix me have data
             a_track_point.elevation = 100
             # a_track_point.speed     = 5  # meters per second
             track_point_list.append( a_track_point )
 
-            # Add track points to the track
-            track.segments.append(gpxpy.gpx.GPXTrackSegment( track_point_list ))
-            self.max_min_lat_long = max_min_lat_long   # not good !! forgot why
-            # Serialize the GPX data to a string..... for what now out!!
-            #gpx_data = gpx.to_xml()
-            #rint(gpx_data)
+        # Add track points to the track -- outdent here
+        track.segments.append( gpxpy.gpx.GPXTrackSegment( track_point_list ))
+        self.max_min_lat_long = max_min_lat_long   # not good !! forgot why
+        # Serialize the GPX data to a string..... for what now out!!
+        #gpx_data = gpx.to_xml()
+        #rint(gpx_data)
 
-        msg     = "_pp_gpx done" #" {gpx_data}"
+        msg     = f"_pp_gpx done track_point_list len = {len(track_point_list)}" # {gpx_data}
         AppGlobal.gui.write_gui( msg )
         return  gpx
 
@@ -811,6 +882,7 @@ class App( app_abc.AppABC ):
 
         msg   = f"Starting _gpx_to_map... {'unknown'} points"
         print( msg )
+        AppGlobal.logger.debug( msg )
 
         # variables are later used to calculate the center coordinates of all the GPX files so the map can be centered at that location
         latCenter = 0
@@ -827,10 +899,17 @@ class App( app_abc.AppABC ):
 
             # extract the latitude and longitude data from the GPX file
             lats, lngs = [], []
-
-            # extracts the latitude and longitude coordinates of each point in each track segment, appending them to separate lists called lats and lngs
+            msg   = f"gpx.tracks len  = {len(gpx.tracks)}"
+            AppGlobal.logger.debug( msg )
+            # extracts the latitude and longitude coordinates of each point in each
+            # track segment, appending them to separate lists called lats and lngs
             for track in gpx.tracks: # iterable that contains all of the tracks in the GPX file
-                for segment in track.segments: # each track is composed of one or more track segments, which are represented by the track.segments iterable
+                msg   = f"len(track.segments)  = {len(track.segments)}"
+                AppGlobal.logger.debug( msg )
+                for segment in track.segments: # each track is composed of one or more track segments,
+                    # which are represented by the track.segments iterable
+                    msg   = f"segment.points  = {len(segment.points)}"
+                    AppGlobal.logger.debug( msg )
                     for point in segment.points: # each track segment consists of a series of GPS points that make up the track
 
                         # !! check for None in next  -- or make sure gpx is clean
@@ -839,6 +918,9 @@ class App( app_abc.AppABC ):
                         max_min_lat_long.add_lat_long( point.latitude, point.longitude )
 
                         countCoords += 1
+                        msg    = f"countCoords = {countCoords}"
+                        #rint(  msg  )
+                        AppGlobal.logger.debug( msg )
 
             # calculates the sum of all latitudes and longitudes, and then
             # divides them by the total number of points in the GPX files to get the average
@@ -855,8 +937,13 @@ class App( app_abc.AppABC ):
         # ------- add a polyline to map ------ #
         lats, lngs = [], []
 
-        # extracts the latitude and longitude coordinates of each point in each track segment, appending them to separate lists called lats and lngs
-        print( f"len( gpx.tracks )  {len( gpx.tracks )}")
+        # extracts the latitude and longitude coordinates of each point
+        # in each track segment, appending them to separate lists called lats and lngs
+
+        msg    =  f"add a polyline to map len( gpx.tracks )  {len( gpx.tracks )}"
+        print( msg )
+        AppGlobal.logger.debug( msg )
+
         for track in gpx.tracks: # iterable that contains all of the tracks in the GPX file
             for segment in track.segments: # each track is composed of one or more track segments, which are represented by the track.segments iterable
                 for point in segment.points: # each track segment consists of a series of GPS points that make up the track
@@ -902,9 +989,49 @@ class App( app_abc.AppABC ):
         print( msg )
 
 
-
-
     # ---- New Filters ------------------------------------------
+    def _pp_to_filtered_pp( self, photo_points ):
+        """
+        filter the photo points according to the gui
+        raise execpt if none left
+
+        """
+        gui   = self.gui
+        if gui.get_use_dates(    ):
+            a_filter_function  = self.get_date_filter_function ()
+            photo_points       = self._pp_filter_on_fun( photo_points ,
+                                                   a_filter_function )
+
+            if len( photo_points ) == 0:
+                msg  = "After filtering on dates no points left to map"
+                gui.write_gui( msg )
+
+                raise app_exceptions.ReturnToGui( msg )
+
+            msg    = f"Filtered photo_points on dates: len = {len( photo_points)}"
+            print( msg )
+            self.gui.write_gui( msg )
+            AppGlobal.logger.debug( msg )
+
+        # ---- long lat
+        need_filter, filter_function    = self._get_long_lat_filter_function()
+        if need_filter:
+             photo_points    =  [ a_point for a_point in photo_points if filter_function(a_point ) ]
+
+             if len( photo_points ) == 0:
+                 msg  = "After filtering on long lat no points left to map"
+                 gui.write_gui( msg )
+
+                 raise app_exceptions.ReturnToGui( msg )
+
+             msg    = f"Filtered photo_points on long lat: len = {len( photo_points)}"
+             print( msg )
+             self.gui.write_gui( msg )
+             AppGlobal.logger.debug( msg )
+
+        return photo_points
+
+    # ---------------------------
     def get_date_filter_function( self,  ):
         """
         """
@@ -927,25 +1054,54 @@ class App( app_abc.AppABC ):
         return a_function
 
     # -----------------------------------------
-    def get_long_lat_filter_function( self,  ):
+    def _get_long_lat_filter_function( self,  ):
         """
         what it says read, still in test only max lat
+        need_filter, filter_function    = self._get_long_lat_filter_function()
         """
         gui          = AppGlobal.gui
+        need_filter  = False
 
-        min_lat      = gui.get_min_lat()
-        if min_lat:
-            def min_lat_function(  a_photo_plus ):
+        # ---- long
+        min_long      = gui.get_min_long()
+        if min_long:
+            need_filter  = True
+            def min_long_function(  a_photo_plus ):
                 #rint( "a_function")
-                ok     =  ( a_photo_plus.lat >= min_lat )
+                ok     =  ( a_photo_plus.long >= min_long )
                 return ok
         else:    #rint( "a_function")
+            def min_long_function(  a_photo_plus ):
+                return True
+
+        max_long      = gui.get_max_long()
+        if max_long:
+            need_filter  = True
+            def max_long_function(  a_photo_plus ):
+                ok     =  ( a_photo_plus.long <= max_long )
+                return ok
+        else:    #rint( "a_function")
+            def max_long_function(  a_photo_plus ):
+                return True
+
+        msg               = f"filter on min_long {min_long} max_long  {max_long}    "
+        print( msg )
+        gui.write_gui( msg )
+
+        # ---- lat
+        min_lat      = gui.get_min_lat()
+        if min_lat:
+            need_filter  = True
+            def min_lat_function(  a_photo_plus ):
+                ok     =  ( a_photo_plus.lat >= min_lat )
+                return ok
+        else:
             def min_lat_function(  a_photo_plus ):
                 return True
 
         max_lat      = gui.get_max_lat()
-
         if max_lat:
+            need_filter  = True
             def max_lat_function(  a_photo_plus ):
                 #rint( "a_function")
                 ok     =  ( a_photo_plus.lat <= max_lat )
@@ -954,19 +1110,21 @@ class App( app_abc.AppABC ):
             def max_lat_function(  a_photo_plus ):
                 return True
 
-        msg               = f"filter on max_lat  {max_lat}    "
+        msg               = f"filter on min_lat {min_lat} max_lat  {max_lat}    "
         print( msg )
         gui.write_gui( msg )
 
         def long_lat_filter_function( a_photo_plus ):
-            ok       = min_lat_function( a_photo_plus ) and max_lat_function( a_photo_plus )
+            ok       = ( min_lat_function( a_photo_plus )  and max_lat_function( a_photo_plus ) and
+                         min_long_function( a_photo_plus ) and max_long_function( a_photo_plus ) )
             return ok
+
         # def a_function(  a_photo_plus ):
         #    #rint( "a_function")
         #    ok     =  ( a_photo_plus.datetime >= start_datetime ) and ( a_photo_plus.datetime <= end_datetime )
         #    return ok
 
-        return long_lat_filter_function
+        return need_filter,  long_lat_filter_function
 
     # -----------------------------------------
     def _pp_filter_on_fun( self, photo_points, filter_fun   ):
@@ -994,16 +1152,31 @@ class App( app_abc.AppABC ):
 
         return new_photo_points
 
-
-
-
-
     # ---- Sort --------------------------------------
+    def _pp_to_sorted_pp( self, photo_points ):
+        """
+        sort as requested in gui, this mutates
+        but could create new so use return
+
+        """
+        sort_fun    = self._get_gpx_sort_fun(   )
+        if sort_fun:
+            photo_points.sort(  key = sort_fun )   # sort in place
+
+
+        msg    = f"Sorted photo_points now len = {len( photo_points)}"
+        print( msg )
+        self.gui.write_gui( msg )
+        AppGlobal.logger.debug( msg )
+
+        return photo_points
+
+
+    # ------------------------
     def _gpx_sort_fun( self, data ):
         """
         for sorting gpx data
         this returns a key
-
         """
         key    = data.lat
         return key
@@ -1018,6 +1191,7 @@ class App( app_abc.AppABC ):
             perhaps a lambda ... but then oneliners
             could do from dict if get many
             output to gui
+            !! consider change to dict base
         """
         gui        = AppGlobal.gui
         sort       = gui.get_sort_rb_index()
@@ -1026,13 +1200,17 @@ class App( app_abc.AppABC ):
             msg   = "No sorting of points"
             fun   = None     # flag value for no sort
 
-        elif sort == gui.DATE_SORT:
+        elif sort == gui.DATETIME_SORT:
             msg   = "Sort points on date"
             fun   = self._photo_plus_sort_key_on_datetime
 
         elif sort == gui.FN_SORT:
-                msg   = "Sort points on filename"
-                fun   = self._photo_plus_sort_key_on_filename
+            msg   = "Sort points on filename"
+            fun   = self._photo_plus_sort_key_on_filename
+
+        else:
+            msg   = "Not a valid sort from gui, No sorting of points"
+            fun   = None     # flag value for no sort
 
         gui.write_gui( msg )
         return fun
@@ -1050,51 +1228,6 @@ class App( app_abc.AppABC ):
         #     sort_fun = self._gpx_sort_fun
         gpx_data.sort(  key = sort_fun )   # sort in place
         return gpx_data     # but this is same as what was passed in
-
-    # ------------------------------------------
-    def _get_gpx_filter_funxxx( self,    ):
-        """
-        Arguments
-            implied: self.gui
-        return
-            a filter function for gpx_data
-            return None if no filtering
-        datetime.datetime.combine( a_date, datetime.datetime.max.time()  )
-        Note consider changing to something involving "partial"
-        """
-
-        # -----------------
-
-
-        #     a_filter_fun = self._get_gpx_filter_fun()  # so far jus for dates
-        #     if a_filter_fun is None:
-        #         msg = "No date filtering for this data"
-        #         AppGlobal.gui.write_gui( msg )
-        #     else:
-        #         gpx_data = self._gpx_filter_on_filedates(gpx_data, a_filter_fun )
-
-
-
-        #     self._sort_gpx_data( gpx_data )
-
-        # ---------------
-
-        # zzz
-
-        # partial_fun      = None
-        # use_dates        = self.gui.get_use_dates()
-        # if use_dates:
-        #     start_date   = self.gui.get_start_date()
-        #     end_date     = self.gui.get_end_date()
-        #     msg          = "need to error check start and end date here "
-        #     print( msg )
-
-        #     start_datetime    = datetime.datetime.combine( start_date, datetime.datetime.max.time() )
-        #     end_datetime      = datetime.datetime.combine( end_date,   datetime.datetime.max.time()   )
-
-        #     partial_fun  = partial( self._photo_plus_date_filter, start_datetime = start_datetime, end_datetime = end_datetime )
-
-        # return partial_fun
 
     # ---- Filter ------------------------------------------
     def _gpx_filter_on_filedates( self, gpx_data, filter_fun   ):
@@ -1120,7 +1253,6 @@ class App( app_abc.AppABC ):
 
         return new_gpx_data
 
-
     # ------------------------------------------
     def _photo_plus_sort_key_on_filename( self, a_photo_plus, ):
         """
@@ -1144,7 +1276,6 @@ class App( app_abc.AppABC ):
         key     =  a_photo_plus.datetime
         return key
 
-
     # ------------------------------------------
     def _photo_plus_date_filter( self, a_photo_plus, start_datetime, end_datetime ):
         """
@@ -1166,7 +1297,7 @@ class App( app_abc.AppABC ):
             mutates gpx_data
         """
         1/0
-        if sort_fun is None:
+        if filter_fun is None:
             sort_fun = self._gpx_sort_fun()
         gpx_data.sort(  key = self._gpx_sort_fun )   # sort in place
 
@@ -1176,7 +1307,6 @@ class App( app_abc.AppABC ):
             file_name
             gpx_data     .... points to build a kml file
         """
-
         # Create a KML object
         kml = simplekml.Kml()
 
@@ -1283,7 +1413,6 @@ class App( app_abc.AppABC ):
         msg     = "make_gpx_from_data done" #" {gpx_data}"
         AppGlobal.gui.write_gui( msg )
         return  gpx
-
 
     # ------------------------------------------
     def _gpx_data_from_file_file_list( self, file_list ):
@@ -1475,7 +1604,8 @@ class App( app_abc.AppABC ):
             a_file_path    = a_file_path.parent
 
         suffixes        = ["jpg","png", ]
-        file_list       = [ str(path.absolute() ) for i in suffixes for path in a_file_path.glob("*."+i)]
+        file_list       = [ str(path.absolute() )
+                            for i in suffixes for path in a_file_path.glob("*."+i)]
 
         self.write_todffl(file_list)
 
@@ -1484,7 +1614,7 @@ class App( app_abc.AppABC ):
     # ------------------------------------------
     def write_todffl( self, file_list ):
         """
-        what it says -- move to file utils
+        what it says -- move to file utils  -- see  ?
         args
             implicit from gui
         returns
@@ -1518,7 +1648,7 @@ class App( app_abc.AppABC ):
 
     # ---- gui_ functions -------------------
     # ------------------------------
-    def gui_make_map_from_filelist ( self, ):
+    def gui_make_map_from_filelistxxxx( self, ):
         """
         Purpose
            what it says
@@ -1537,7 +1667,7 @@ class App( app_abc.AppABC ):
             file_list    = self._get_file_list_from_file( file_name )
             gpx_data     = self._gpx_data_from_file_file_list( file_list )
 
-            gpx_data     = self._sort_filter_gpx_data( gpx_data )   # zzz
+            gpx_data     = self._sort_filter_gpx_data( gpx_data )
             if len( gpx_data ) > 0:
 
                 gpx          = self._make_gpx_from_data( gpx_data )
@@ -1584,10 +1714,15 @@ class App( app_abc.AppABC ):
             msg          = "need to error check start and end date here "
             print( msg )
 
-            start_datetime    = datetime.datetime.combine( start_date, datetime.datetime.max.time() )
-            end_datetime      = datetime.datetime.combine( end_date,   datetime.datetime.max.time() )
+            start_datetime    = datetime.datetime.combine(
+                                   start_date, datetime.datetime.max.time() )
 
-            partial_fun       = partial( self._photo_plus_date_filter, start_datetime = start_datetime, end_datetime = end_datetime )
+            end_datetime      = datetime.datetime.combine(
+                                   end_date,   datetime.datetime.max.time() )
+
+            partial_fun       = partial( self._photo_plus_date_filter,
+                                         start_datetime  = start_datetime,
+                                         end_datetime    = end_datetime )
             msg     = f"Filter on  {start_datetime} to  {end_datetime} starting with {len( gpx_data)} points"
             AppGlobal.gui.write_gui( msg )
 
@@ -1630,13 +1765,12 @@ class App( app_abc.AppABC ):
         AppGlobal.os_open_txt_file( file_name )
 
     # ------------------------------
-    def gui_make_kmz_from_filelist ( self, ):
+    def gui_make_kmz_from_filelistxxxxx ( self, ):
         """
         Purpose
            what it says
         Arg
             file name comes from gui
-
 
         """
         start_time = time.time()
@@ -1660,7 +1794,6 @@ class App( app_abc.AppABC ):
 
             self._kml_file_from_data( gpx_data )
 
-
         except app_exceptions.ReturnToGui  as an_except:
             msg  = f"File Load for KMZ failed, {an_except.why}"
             print( msg )
@@ -1678,7 +1811,7 @@ class App( app_abc.AppABC ):
         AppGlobal.gui.write_gui( msg )
 
     # ------------------------------
-    def gui_make_map_from_dir ( self, ):
+    def gui_make_map_from_dirxxxx( self, ):
         """
         Purpose
             what is says
@@ -1721,22 +1854,19 @@ class App( app_abc.AppABC ):
             msg  = f"File Load failed, {an_except.why}"
             AppGlobal.gui.write_gui( msg )
 
-
         end_time    = time.time()
         run_time    = round( end_time - start_time, 2 )
         msg         = f"End of Make Map from Directory... run time {run_time} sec"
         gui.write_gui( msg )
 
     # ------------------------------
-    def gui_make_kmz_from_dir ( self, ):
+    def gui_make_kmz_from_dirxxxx ( self, ):
         """
         Purpose
             what is says
-
         Arg
             use file_name from gui for directory
             and other gui stuf see code
-
         """
         start_time   = time.time()
         AppGlobal.gui.clear_message_area()
@@ -1761,15 +1891,12 @@ class App( app_abc.AppABC ):
                 gui.write_gui( msg )
 
 
-            #zzz
             # a_filter_fun = self._get_gpx_filter_fun()  # so far jus for dates
             # if a_filter_fun is None:
             #     msg = "No date filtering for this data"
             #     AppGlobal.gui.write_gui( msg )
             # else:
             #     gpx_data = self._gpx_filter_on_filedates(gpx_data, a_filter_fun )
-
-
 
         except app_exceptions.ReturnToGui  as an_except:
             msg  = f"KMZ file creation failed, {an_except.why}"
@@ -1781,16 +1908,14 @@ class App( app_abc.AppABC ):
             print( msg )
             AppGlobal.gui.write_gui( msg )
 
-
         end_time    = time.time()
         run_time    = round( end_time - start_time, 2 )
         msg         = f"End of KMZ file creation, from Directory... run time {run_time} sec"
         print( msg )
         AppGlobal.gui.write_gui( msg )
 
-
     # ------------------------------
-    def gui_open_irfanview( self, ):
+    def gui_open_irfanviewxxxxx( self, ):
         """
         Purpose
             what is says
@@ -1807,10 +1932,10 @@ class App( app_abc.AppABC ):
         """
         Purpose
             what is says
+            this is old version which does not make photoPlus points
 
         Arg
             use file_name from gui for directory
-
 
         """
         start_time = time.time()
@@ -1896,11 +2021,11 @@ class App( app_abc.AppABC ):
     # ------------------------------------------
     def _gpx_from_gpxfile( self,  file_name ):
         """
+        required in vers 2023 12 03.01
             file_name needs to be a *.gpx file name
         returns
             gpx
         """
-
         # next migh be a function ??
         # chdek none
         if file_name is None:
@@ -1923,7 +2048,7 @@ class App( app_abc.AppABC ):
             raise app_exceptions.ReturnToGui( msg )
 
         with open( file_path, 'r' ) as readFile:
-             gpx = gpxpy.parse( readFile )
+            gpx = gpxpy.parse( readFile )
 
         msg    = f"Made gpx object from {file_name}"
         print( msg )
@@ -1932,7 +2057,7 @@ class App( app_abc.AppABC ):
         return gpx
 
     # ------------------------------------------
-    def scan_dir_to_file( self, ):
+    def scan_dir_to_filexxxx( self, ):
         """
         scan a directory to make a file listing files in dor
 
@@ -1961,6 +2086,7 @@ class App( app_abc.AppABC ):
                 line = str( i_path.absolute() ) + "\n"
                 fno.write( line )
 
+    # ---- edits
     # ------------------------------------------
     def edit_map( self, ):
         """
@@ -2013,8 +2139,6 @@ class App( app_abc.AppABC ):
 
         AppGlobal.os_open_txt_file( file_name )
 
-
-
 # ----------------------------------------
 class MaxMinLatLong( ):
     """
@@ -2030,7 +2154,6 @@ class MaxMinLatLong( ):
         self.min_lat   = None
         self.min_long  = None
         #self.max_span_to_zoom but max_span is a float...
-
 
     # ----------------------------------------
     def add_lat_long( self, lat, long ):
@@ -2109,12 +2232,4 @@ class MaxMinLatLong( ):
         print( f"got zoom {zoom} for a max_span of {max_span}")
         return zoom
 
-# -----------------------
-def main():
-    """
-    what it says, read
-    """
-    a_app = App( None, None )
-    return a_app
 
-# ---- eof =======================

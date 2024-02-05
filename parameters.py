@@ -53,8 +53,6 @@ class Parameters( ):
         # --- add on for testing, use as desired edit mode for your needs
         #self.plus_test_mode()
 
-
-
     #  -------
     def mode_tk( self ):
         """
@@ -62,7 +60,7 @@ class Parameters( ):
         """
         self.mode               = "mode_tk"
 
-        self.gui_style          = "gui_with_tabs"       # "gui_with_qt":   "gui_with_tabs,   see clip_board.py
+        # self.gui_style          = "gui_with_tabs"       # "gui_with_qt":   "gui_with_tabs,   see clip_board.py
         self.gui_module         = "gui_with_tabs"       #  gui_with_tabs  "gui_qt"
 
         self.gui_theme_type     = "ttkthemes"
@@ -324,8 +322,8 @@ class Parameters( ):
         self.icon               = r"geo_icon.png" # png does not work
         self.icon               = r"geo_icon.ico" # png --gimp--> ico
 
-        self.gui_style          = "gui_with_qt"         # "gui_with_qt":   "gui_with_tabs,   see clip_board.py
-        self.gui_module         = "gui_qt"          #  gui_with_tabs  "gui_qt"
+        # self.gui_style          = "gui_with_qt"         # "gui_with_qt":   "gui_with_tabs,   see clip_board.py
+        # self.gui_module         = "gui_qt"          #  gui_with_tabs  "gui_qt"
 
         self.gui_theme_type     = "ttkthemes"
         self.gui_ttk_theme      = "plastik"     #
@@ -350,6 +348,10 @@ class Parameters( ):
         self.bg_color_frame     = "yellow"   # "black"  # "#F0F0F0"
             #    "#F0F0F0" seems to be a default light gray "gray" is darker
 
+        # ---- gui defaults
+
+        self.default_sort       = "filename"    # see gui.py init and sort frame
+
         # ---- logging
         self.pylogging_fn       = "app.py_log"   # file name for the python logging
         self.logging_level      = logging.DEBUG        # may be very verbose
@@ -359,12 +361,10 @@ class Parameters( ):
         self.logger_id          = "gt"         # id of app in logging file
 
         self.gui_text_log_fn    = None   # for edit window if None then no logging
-        self.gui_text_log_fn    = "gui_log.log"
+        #self.gui_text_log_fn    = "gui_log.log"
 
         self.log_gui_text       = False # this is for gui_ext message area
                                              # goes to normal log file  not special one
-        # ---- history
-        # add as we get to it
 
         # ---- file names
 
@@ -378,7 +378,6 @@ class Parameters( ):
         self.default_photo_points_fn    = "default_photo_points.csv"
         self.default_kmz_fn             = "default_kmz.kmz"
         self.default_html_fn            = "default_map.html"
-
 
         # may not be best for text help file
         self.help_file       =  "./help/help.txt"   #  >>. this is the path to our main .py file self.py_path + "/" +
@@ -395,21 +394,9 @@ class Parameters( ):
         self.irfanview_fn               = "D:/apps/IrfanView/i_view64.exe"
 
 
-        # ========================= buttons initial state  ======================
-
-        #------------------------- default the named check box's see gui.py  ---------------
-        # not really implemented now... in process
-
-
         self.line_join         = "\r\n"   # cr lf see cmd_processor
                                           # use when joining lines this is windows?
         self.line_join         = "\n"     #
-
-        #------------------------- default the named radio buttons see gui.py  ---------------
-        self.rb_num_on          = 0      # which radio button on, number is not nice,
-                                         # but easy !! is working ???
-        #... not all may be named see gui.py
-        #self.include_wiki_buttons  = True    # experimental flag, leave True
 
 
         #---------------------------------------------------

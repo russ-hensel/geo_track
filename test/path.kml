@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="13">
+        <Placemark id="15">
+            <name>My Path</name>
+            <LineString id="14">
+                <tessellate>1</tessellate>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>-122.4194,37.7749,0 -118.2437,34.0522,0 -74.006,40.7128,0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

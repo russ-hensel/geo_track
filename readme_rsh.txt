@@ -11,6 +11,7 @@
 ========Links ====
 ========Logic ====
 ========Long and Latitude ====
+========Install====
 ========venv
 ========to pythonistas gui
 
@@ -32,6 +33,47 @@ D:\PhotosRaw\2023\aferica\phone\africa_3023\safarie\PXL_20230919_163207438.jpg
 
 =========Versions
 
+remember to rename data_hidden to data.py
+
+---------version 10 ---------
+     Why:  lots of progress timezone but not done
+         still lots of dead code to remove and
+         lets get processing to the background
+        !! try copy to github again
+        ** some code renamed better
+        ** more code to rshlib
+        ** few more defaults some via parameters
+        !* improve help
+        !! spacer befor go and bold??
+
+
+---------version 9 ---------
+    Why:  lots of progress on new gui pretty much done
+            lots of dead code to remove and lets get processing
+            to the background
+            wait cursor
+
+
+    !! problem sorting on none file name... make none ? or something low
+    !! problem filter on date that is not timezone aware, may need to convert all
+       consider a temporary patch for now
+
+    ** long lat filter done, needs testing, perhaps more values
+    !! ?? consider sort on long lat values, by place name or by value
+    !! next try filters first on input_gpx file.....
+
+    !! processing to background
+    !! and of course below
+    !! issues with gpx in file
+        !! oputpt control seems not to work
+        !! filter on date seems not to work
+        ** make it produce photo_points ??
+    !* default optput, and sanity check on output
+    !* fix error conditions with operation terminate
+    !* add progress and info messages
+    !* remove dead code, modules....   geo_track start at 2.2.k lines
+    !! think v write_file_list( file_name, file_list, append_flag = False ): needs to be hooked in
+       to replace geo_track.write_todffl
 
 ---------version 8---------
     Why:  lots of progress on new gui, but big changes may mess up
@@ -53,7 +95,7 @@ D:\PhotosRaw\2023\aferica\phone\africa_3023\safarie\PXL_20230919_163207438.jpg
 
     **  change gui, specif input and output
     ** save the geo_photo_points to csv file
-    1! look at ability of stuff to save file names
+    1! look at ability of stuff to sav!!e file names
     ** save geo_photo_points --- prior to filter sort, use this as a new name
     !! do undone items below
     !! more integrate with infran.view -- look at command line options
@@ -119,6 +161,15 @@ D:\PhotosRaw\2023\aferica\phone\africa_3023\safarie\PXL_20230919_163207438.jpg
 ------------------ new logic
 
     get input
+        then all will be make into PhotoPlus points and process
+
+    dir input
+
+
+    gpx input
+        make photo plus     _gpx_to_pp
+            ....
+
 
  _dir_to_fl       from a dir           --> make a list of files ( side effect save a file list file  dir_to_file_list.txt )
  _fl_to_fl        from a file- list    --> make a list of files
@@ -160,6 +211,19 @@ _pp_gpx                 change to _pp_to_gpx          from sorted photo points m
 
             if photo_plus.has_lat_long:
 
+========Install====
+
+***ok millhouseMint py_10 jan 2024
+
+
+No module named 'gpxpy'
+No module named 'folium'
+No module named 'simplekml'
+No module named 'tkcalendar'
+No module named 'geopy'
+No module named 'gmplot'
+No module named 'exifread'
+No module named 'haversine'
 
 ========Long and Latitude
 

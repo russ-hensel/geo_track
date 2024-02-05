@@ -7,16 +7,17 @@ Created on Sat Apr 10 09:33:35 2021
 
 import sys
 
-# sys.path.append(  "../rsh" )
-# sys.path.append(  "../rshlib" )
-# sys.path.append(  "/media/sf_0000/python00/python3/_projects/rshlib" )
-# sys.path.append( r"D:\Russ\0000\python00\python3\_projects\rshlib"   )
+sys.path.append(  "../rsh" )
+sys.path.append(  "../rshlib" )
+sys.path.append(  "/media/sf_0000/python00/python3/_projects/rshlib" )
+sys.path.append( r"D:\Russ\0000\python00\python3\_projects\rshlib"   )
 
 print( "put a useful comment about above here remove sys.path.append, and copy over contents" )
 
 def main( ):
     import geo_track
-    geo_track.main()
+    app   = geo_track.App()
+    # geo_track.main()  creating it is enough
 
 # --------------------
 if __name__ == "__main__":

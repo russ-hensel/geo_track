@@ -18,7 +18,6 @@ if __name__ == "__main__":
 
 import datetime
 
-
 import photo_ext
 from   app_global import AppGlobal
 
@@ -80,7 +79,6 @@ def read_photo_points( file_name, ):
             # a_photo_point.datetime  = datetime.datetime( splits[1] )
             a_photo_point.datetime  = datetime.datetime.strptime( splits[1],  "%Y-%m-%d %H:%M:%S" )
 
-
             # may need null check here
             has_long_lat            = True
             try:
@@ -110,9 +108,9 @@ def write_file_list( file_name, file_list, append_flag = False ):
         implicit from gui
     returns
         may append to file in file system
+
     """
     # write to defaul file -- !! move to after sort ??
-
     gui       = AppGlobal.gui
 
     if append_flag:
@@ -168,4 +166,6 @@ def read_flf_to_fl( file_list_fn ):
             gui.write_gui( msg )
 
     return  file_list
+
+
 # ---- eof

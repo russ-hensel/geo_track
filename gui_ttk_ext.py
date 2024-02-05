@@ -80,6 +80,7 @@ def set_icon( root_frame, icon_fn  ):
     """
     What it says, read code
     if it fails kill the consol and restart
+    gui_ttk_ext.set_icon( icon_fn ) #   parameters.icon
     """
     try:
         img         = tk.PhotoImage( file = icon_fn )

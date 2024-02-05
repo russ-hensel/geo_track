@@ -14,7 +14,7 @@ Purpose:
         Data may be sorted and filtered in various ways.
         
         
-  	The user interface, general information.
+  	The graphical user interface (GUI), general information.
   	
   		At the very top of the window is a menu bar with various options.
   	
@@ -28,6 +28,103 @@ Purpose:
   		
   		Finally at the bottom is a "message area" where the application displays
   		various information for you.
+  		
+  		Some Details:
+  		
+  			The Menu:
+  				MetaApp -> ( control thing about the app )
+  					Show Parameters
+  						A parameter file controls much of the operation of the program.
+  						This menu option shows many of the parameters of the program in
+  						the "message area" at the bottom of the GUI
+  						
+  					Edit Parameter File
+  						This option lets you edit the parameter file ( but may work only after
+  						the parameters for editing have been adjusted for your system.
+  						I have general directions for editing parameter files somewhere
+		
+  					Edit Gui Log
+  						Information sent to the message area of the app may be logged
+  						( this depends on the Parameters ).  This allows you to see and
+  						edit this log.
+  						
+  					Edit Log File
+  						Lets you view/edit the application log file.
+  					
+  					Restart
+  						Will restart the program, typically to use an edited parameter file.
+  					
+  					( the abiltity to view/edit any file depends upon the settings in the
+  					  Parameters )	
+  						
+  				Help ->
+  					Show General Help
+  					
+  					Show Developer Notes
+  						This is a file of developer notes for the developere or you.
+  						May or may not be of interest to you. Menu item may be controlled
+  						by Parameters.
+  						
+  					About
+  						An about box.
+  					
+  		
+  			Below the menu most of the interface is divided into sections ( often with a title )
+  			for controlling the details of the processing.		
+  		
+				Input Control
+  				
+  					Controls the input to the program:
+  					
+  					*"Input From", for the source of input to the program
+  						DirScan    
+  						   Starting a directory specified by "Get File Name"
+						   photo file are found and the geo location data is extracted
+						   this will work down the directory structure to find more and more
+						   files.  This can be limited by the number in "Dir Recursion Litmi" with
+						   0 meaning no limit 
+  				 
+                        FileList   
+		                     you can make a list of photo file in a text file and use that list
+		                     of photos as input
+		                           
+                        PhotoPoints
+		                	Photo points refers to a file containing photo data previously extracted from
+		                	photos.
+                        	
+                        GPXfile
+                        	GPX files are files of geo information that may be produced by other programs
+                        	
+                    *"Get File Name" 	You can type a file name here or browse the file system to get
+                    a file name.  ....
+                        
+                        If input is:
+                            Dir scan, select a photo from the top level directory you want scanned.
+                            	typically a .jpg, .bmp or .png file
+                            File list: select a file with a list of files: typically a .txt file
+                            PhotoPoints ..... typically a .csv file
+                            GPXfile   ..... typically a .gpx file 
+                        
+                    <Browse>	Lets you select a file name for Get File Name
+  					 
+ 				Date Filtering
+ 					If checked limits the data used to data points between the two dates entered
+ 					in the two date fields.
+ 				
+ 				 	
+				Lat( N/S ) Long( E/W ) Filter
+					For value ented other than "Ignore" data is filter only within the bounds
+					you specify.
+					....
+				
+				Sorting	
+					Data may be sorted prior to plotting, these entries control the sorting.
+					Improper sorting may result in odd maps.						
+ 					
+ 				Output Options
+ 				
+ 				Message Area 			 		
+  		
         
 Buttons: -- this data is obsolete 
 

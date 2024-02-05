@@ -1,0 +1,505 @@
+
+===========================================
+Russ's python backup ( backup_thread using copy_tree_new ) 
+Beginning backup from
+D:\Russ\0000\python00\python3\_projects\rshlib
+     to
+D:\for_github\geo_track
+
+Directory Backup for Python 3 Ver 6 2023 09 05.0
+Directory depth 0
+Filter text FFMultipleFilters       function_description =  combine multiple filters 
+       0    = FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = ['_']
+    self.include_true      = False
+    self.use_lower         = True
+       1    = FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = ['a']
+    self.include_true      = False
+    self.use_lower         = True
+DFNameStartsWith       function_description =  see name 
+    include_true           = False
+    use_lower              = True
+    tail_only              = True
+    list_of_starts_with    = ['old', '_', '.']
+Time now: 2023-12-03 16:26:39
+run_backup() done -- Time now: 2023-12-03 16:26:39
+
+
+End of backup from
+D:\Russ\0000\python00\python3\_projects\rshlib
+     to
+D:\for_github\geo_track
+
+files added   = 0
+files updated = 0
+files skipped = 0
+dir count     = 1
+dir added     = 0
+dir updated   = 1
+dir skipped   = 5
+bytes copied  = 0
+bytes skipped = 0
+errors  = 0
+bytes   = 0 B
+
+========== End of backup ===========
+
+
+===========================================
+Russ's python backup ( backup_thread using copy_tree_new ) 
+Beginning backup from
+D:\Russ\0000\python00\python3\_projects\rshlib
+     to
+D:\for_github\geo_track
+
+Directory Backup for Python 3 Ver 6 2023 09 05.0
+Directory depth 0
+Filter text FFMultipleFilters       function_description =  combine multiple filters 
+       0    = FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = ['_']
+    self.include_true      = False
+    self.use_lower         = True
+DFNameStartsWith       function_description =  see name 
+    include_true           = False
+    use_lower              = True
+    tail_only              = True
+    list_of_starts_with    = ['old', '_', '.']
+Time now: 2023-12-03 16:34:38
+run_backup() done -- Time now: 2023-12-03 16:34:38
+
+
+End of backup from
+D:\Russ\0000\python00\python3\_projects\rshlib
+     to
+D:\for_github\geo_track
+
+files added   = 0
+files updated = 0
+files skipped = 0
+dir count     = 1
+dir added     = 0
+dir updated   = 1
+dir skipped   = 5
+bytes copied  = 0
+bytes skipped = 0
+errors  = 0
+bytes   = 0 B
+
+========== End of backup ===========
+
+
+===========================================
+Russ's python backup ( backup_thread using copy_tree_new ) 
+Beginning backup from
+D:\Russ\0000\python00\python3\_projects\rshlib
+     to
+D:\for_github\geo_track
+
+Directory Backup for Python 3 Ver 6 2023 09 05.0
+Directory depth 0
+Filter text FFMultipleFilters       function_description =  combine multiple filters 
+       0    = FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = ['_']
+    self.include_true      = False
+    self.use_lower         = True
+DFNameStartsWith       function_description =  see name 
+    include_true           = False
+    use_lower              = True
+    tail_only              = True
+    list_of_starts_with    = ['old', '_', '.']
+Time now: 2023-12-03 16:35:41
+run_backup() done -- Time now: 2023-12-03 16:35:41
+
+
+End of backup from
+D:\Russ\0000\python00\python3\_projects\rshlib
+     to
+D:\for_github\geo_track
+
+files added   = 0
+files updated = 0
+files skipped = 0
+dir count     = 1
+dir added     = 0
+dir updated   = 1
+dir skipped   = 5
+bytes copied  = 0
+bytes skipped = 0
+errors  = 0
+bytes   = 0 B
+
+========== End of backup ===========
+
+
+===========================================
+Russ's python backup ( backup_thread using copy_tree_new ) 
+Beginning backup from
+/mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track
+     to
+/mnt/WIN_D/for_github/geo_track
+
+Directory Backup for Python 3 Ver 6 2023 09 05.0
+Directory depth -1
+Filter text FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = _
+    self.include_true      = False
+    self.use_lower         = True
+DFNameStartsWith       function_description =  see name 
+    include_true           = False
+    use_lower              = True
+    tail_only              = True
+    list_of_starts_with    = ['old', '_', '.']
+Time now: 2023-12-06 13:23:35
+update /mnt/WIN_D/for_github/geo_track/app.py_log
+dates 1701719528 --> 1701621592
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/app_abc.py dates 1700919175  >>  1700919176
+update /mnt/WIN_D/for_github/geo_track/default_file_filelist.txt
+dates 1701719488 --> 1701553856
+update /mnt/WIN_D/for_github/geo_track/default_kmz.kmz
+dates 1701716722 --> 1701553857
+update /mnt/WIN_D/for_github/geo_track/default_map.html
+dates 1701719530 --> 1701553579
+update /mnt/WIN_D/for_github/geo_track/default_photo_points.csv
+dates 1701719529 --> 1701553857
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/dir_tree_explore.py dates 1699128084  >>  1699128085
+update /mnt/WIN_D/for_github/geo_track/file_utils.py
+dates 1701740497 --> 1700945281
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_geo location_1.png dates 1698868280  >>  1698868281
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_gps_location_1.png dates 1698868280  >>  1698868281
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_gps_location_2.png dates 1698868276  >>  1698868277
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_icon.ico dates 1698872806  >>  1698872807
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_icon.png dates 1698868264  >>  1698868265
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_icon.xcf dates 1698872777  >>  1698872778
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_icon_red.png dates 1698873064  >>  1698873065
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_location_map_2.png dates 1698868271  >>  1698868272
+update /mnt/WIN_D/for_github/geo_track/geo_track.py
+dates 1701740497 --> 1701608229
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/gpx_map.py dates 1698239520  >>  1698239521
+update /mnt/WIN_D/for_github/geo_track/gui.py
+dates 1701740497 --> 1701608983
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/gui_log.log
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/parameters.py dates 1701607593  >>  1701607594
+update /mnt/WIN_D/for_github/geo_track/readme_rsh.txt
+dates 1701740497 --> 1701608581
+update /mnt/WIN_D/for_github/geo_track/scratch.py
+dates 1701627422 --> 1701019985
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/file_lsit_from_scan.txt
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-10-22_Oct_22,_2023_11_06_08_AM.gpx dates 1698075533  >>  1698075534
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-10-22_Oct_22,_2023_11_06_08_AM_1699447248612.gpx dates 1699447248  >>  1699447249
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-10-22_Oct_22,_2023_11_06_08_AM_2.gpx dates 1701017477  >>  1701017478
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-04_Nov_4,_2023_12_51_44_PM.gpx dates 1699447239  >>  1699447240
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-04_Nov_4,_2023_12_51_44_PM_2.gpx dates 1701017478  >>  1701017479
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-09_Nov_8,_2023_10_58_56_PM.gpx dates 1701017478  >>  1701017479
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-09_Nov_9,_2023_7_57_25_AM.gpx dates 1701017478  >>  1701017479
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-12_Nov_11,_2023_7_08_06_PM.gpx dates 1701017478  >>  1701017479
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-16_Nov_15,_2023_9_23_56_PM.gpx dates 1701017478  >>  1701017479
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023_db.txt dates 1698609366  >>  1698609367
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/backup_detail.log
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/backup_summary.log
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/chat_2.py dates 1698502922  >>  1698502923
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/directory_backup.pylog
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/file_list.txt dates 1698762535  >>  1698762536
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/infran_list.txt dates 1698765392  >>  1698765393
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/june2022.txt dates 1698609096  >>  1698609097
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220301_155128.jpg dates 1646164288  >>  1646164289
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220303_122513.jpg dates 1646324712  >>  1646324713
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220303_122559.jpg dates 1646324758  >>  1646324759
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220304_124821.jpg dates 1700314593  >>  1700314594
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220308_182118.jpg dates 1646778078  >>  1646778079
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220324_160717.jpg dates 1648152436  >>  1648152437
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220507_114853.jpg dates 1651938532  >>  1651938533
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220610_205903.jpg dates 1654909142  >>  1654909143
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220626_112746.jpg dates 1656260866  >>  1656260867
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220626_190314.jpg dates 1656288194  >>  1656288195
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220711_082446.jpg dates 1657520686  >>  1657520687
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220718_120947.jpg dates 1658142586  >>  1658142587
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220723_111335.jpg dates 1658571214  >>  1658571215
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220723_112427.jpg dates 1658571866  >>  1658571867
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220724_132009.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220812_195659.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230921_112315.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230921_172929.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230922_161819.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230923_112117.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230925_090322.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230926_104437.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230926_171247.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230928_093525.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230928_121228.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230930_110045.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230930_111531.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20231001_085613.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20231002_121656.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20231004_172050.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230209_125745.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230323_211637.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230408_124256.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230411_152154.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230506_151802.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230507_110427_01.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230509_135418.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230530_112453.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230602_204626.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230603_062424.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230603_114935.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230604_061551.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230604_063243.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230605_111201.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230605_152840.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230606_083406.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230606_143339_07.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230607_154516.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230607_155911.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230607_160908.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230608_154332.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230608_155914.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_052937.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_054718.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_060628.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_063814.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_215659.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230610_135750.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230614_193317.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230615_095611.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230616_100924.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230616_103047.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230616_105938.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230621_202131.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230714_195758.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230714_195856.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230805_140420.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230808_200013.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230817_113328.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230817_113657.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230918_075259.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230918_081112.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220904_134712.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220905_100822.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220906_130849.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220906_142603.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220906_144902.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220924_135202.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221003_101623.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221003_155713.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221015_110030.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221015_120403.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221021_100201.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221113_150523.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221223_192914.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221231_202000.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230112_190327.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230125_103913.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230125_143727.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230126_125350.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220903_190613.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230202_160959_03.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230607_163234.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230920_115603.jpg
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/kmz_fr_gep.kml
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/kmz_fr_gep.kmz
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/path.kml
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/pathb.kml
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/path_rsh.kml
+
+===========================================
+Russ's python backup ( backup_thread using copy_tree_new ) 
+Beginning backup from
+/mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track
+     to
+/mnt/WIN_D/for_github/geo_track
+
+Directory Backup for Python 3 Ver 6 2023 09 05.0
+Directory depth -1
+Filter text FFNameStartsWith       function_description =  see name 
+    list_of_starts_with    = _
+    self.include_true      = False
+    self.use_lower         = True
+DFNameStartsWith       function_description =  see name 
+    include_true           = False
+    use_lower              = True
+    tail_only              = True
+    list_of_starts_with    = ['old', '_', '.']
+Time now: 2024-02-05 14:43:04
+update /mnt/WIN_D/for_github/geo_track/app.py_log
+dates 1707065767 --> 1701719529
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/app_abc.py dates 1700919175  >>  1700919176
+update /mnt/WIN_D/for_github/geo_track/default_file_filelist.txt
+dates 1707062611 --> 1701719489
+update /mnt/WIN_D/for_github/geo_track/default_kmz.kmz
+dates 1704507040 --> 1701716723
+update /mnt/WIN_D/for_github/geo_track/default_map.html
+dates 1707062708 --> 1701719531
+update /mnt/WIN_D/for_github/geo_track/default_photo_points.csv
+dates 1707062708 --> 1701719530
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/dir_tree_explore.py dates 1699128084  >>  1699128085
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_geo location_1.png dates 1698868280  >>  1698868281
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_gps_location_1.png dates 1698868280  >>  1698868281
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_gps_location_2.png dates 1698868276  >>  1698868277
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_icon.ico dates 1698872806  >>  1698872807
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_icon.png dates 1698868264  >>  1698868265
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_icon.xcf dates 1698872777  >>  1698872778
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_icon_red.png dates 1698873064  >>  1698873065
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/geo_location_map_2.png dates 1698868271  >>  1698868272
+update /mnt/WIN_D/for_github/geo_track/geo_track.py
+dates 1707065532 --> 1701740498
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/gpx_map.py dates 1698239520  >>  1698239521
+update /mnt/WIN_D/for_github/geo_track/gui.py
+dates 1707065724 --> 1701740498
+update /mnt/WIN_D/for_github/geo_track/parameters.py
+dates 1707065580 --> 1701607594
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/photo_file_utils_xxx.py
+update /mnt/WIN_D/for_github/geo_track/readme_rsh.txt
+dates 1707065040 --> 1701740498
+update /mnt/WIN_D/for_github/geo_track/scratch.py
+dates 1707065532 --> 1701627423
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/file_lsit_from_scan.txt dates 1698853613  >>  1698853614
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/.~lock.exif_info.odt#
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-10-22_Oct_22,_2023_11_06_08_AM.gpx dates 1698075533  >>  1698075534
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-10-22_Oct_22,_2023_11_06_08_AM_1699447248612.gpx dates 1699447248  >>  1699447249
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-10-22_Oct_22,_2023_11_06_08_AM_2.gpx dates 1701017477  >>  1701017478
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-04_Nov_4,_2023_12_51_44_PM.gpx dates 1699447239  >>  1699447240
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-04_Nov_4,_2023_12_51_44_PM_2.gpx dates 1701017478  >>  1701017479
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-09_Nov_8,_2023_10_58_56_PM.gpx dates 1701017478  >>  1701017479
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-09_Nov_9,_2023_7_57_25_AM.gpx dates 1701017478  >>  1701017479
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-12_Nov_11,_2023_7_08_06_PM.gpx dates 1701017478  >>  1701017479
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-16_Nov_15,_2023_9_23_56_PM.gpx dates 1701017478  >>  1701017479
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023-11-26_Nov_26,_2023_6_11_08_PM.gpx
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/2023_db.txt dates 1698609366  >>  1698609367
+update /mnt/WIN_D/for_github/geo_track/test/backup_detail.log
+dates 1701869025 --> 1701621677
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/backup_summary.log dates 1701621676  >>  1701621677
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/chat_2.py dates 1698502922  >>  1698502923
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/directory_backup.pylog dates 1701619917  >>  1701619918
+adding /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/exif_info.odt
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/file_list.txt dates 1698762535  >>  1698762536
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/infran_list.txt dates 1698765392  >>  1698765393
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/june2022.txt dates 1698609096  >>  1698609097
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220301_155128.jpg dates 1646164288  >>  1646164289
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220303_122513.jpg dates 1646324712  >>  1646324713
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220303_122559.jpg dates 1646324758  >>  1646324759
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220304_124821.jpg dates 1700314593  >>  1700314594
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220308_182118.jpg dates 1646778078  >>  1646778079
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220324_160717.jpg dates 1648152436  >>  1648152437
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220507_114853.jpg dates 1651938532  >>  1651938533
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220610_205903.jpg dates 1654909142  >>  1654909143
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220626_112746.jpg dates 1656260866  >>  1656260867
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220626_190314.jpg dates 1656288194  >>  1656288195
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220711_082446.jpg dates 1657520686  >>  1657520687
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220718_120947.jpg dates 1658142586  >>  1658142587
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220723_111335.jpg dates 1658571214  >>  1658571215
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220723_112427.jpg dates 1658571866  >>  1658571867
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220724_132009.jpg dates 1658665208  >>  1658665209
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220812_195659.jpg dates 1660348618  >>  1660348619
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230921_112315.jpg dates 1695288194  >>  1695288195
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230921_172929.jpg dates 1695310168  >>  1695310169
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230922_161819.jpg dates 1695392298  >>  1695392299
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230923_112117.jpg dates 1695460876  >>  1695460877
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230925_090322.jpg dates 1700314608  >>  1700314609
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230926_104437.jpg dates 1695717876  >>  1695717877
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230926_171247.jpg dates 1695741166  >>  1695741167
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230928_093525.jpg dates 1695886524  >>  1695886525
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230928_121228.jpg dates 1695895948  >>  1695895949
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230930_110045.jpg dates 1696064444  >>  1696064445
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230930_111531.jpg dates 1696065330  >>  1696065331
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20231001_085613.jpg dates 1696143372  >>  1696143373
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20231002_121656.jpg dates 1696241816  >>  1696241817
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20231004_172050.jpg dates 1696454450  >>  1696454451
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230209_125745.jpg dates 1675961864  >>  1675961865
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230323_211637.jpg dates 1679620596  >>  1679620597
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230408_124256.jpg dates 1680972176  >>  1680972177
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230411_152154.jpg dates 1681240914  >>  1681240915
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230506_151802.jpg dates 1683411482  >>  1683411483
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230507_110427_01.jpg dates 1683482684  >>  1683482685
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230509_135418.jpg dates 1683665658  >>  1683665659
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230530_112453.jpg dates 1685460294  >>  1685460295
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230602_204626.jpg dates 1685767586  >>  1685767587
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230603_062424.jpg dates 1700314533  >>  1700314534
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230603_114935.jpg dates 1685821774  >>  1685821775
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230604_061551.jpg dates 1685888150  >>  1685888151
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230604_063243.jpg dates 1685889162  >>  1685889163
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230605_111201.jpg dates 1685992320  >>  1685992321
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230605_152840.jpg dates 1686007720  >>  1686007721
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230606_083406.jpg dates 1686069246  >>  1686069247
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230606_143339_07.jpg dates 1686090834  >>  1686090835
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230607_154516.jpg dates 1686181516  >>  1686181517
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230607_155911.jpg dates 1686182352  >>  1686182353
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230607_160908.jpg dates 1686182948  >>  1686182949
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230608_154332.jpg dates 1686267812  >>  1686267813
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230608_155914.jpg dates 1686268754  >>  1686268755
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_052937.jpg dates 1686317376  >>  1686317377
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_054718.jpg dates 1686318438  >>  1686318439
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_060628.jpg dates 1686319588  >>  1686319589
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_063814.jpg dates 1686321494  >>  1686321495
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230609_215659.jpg dates 1686376620  >>  1686376621
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230610_135750.jpg dates 1686434270  >>  1686434271
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230614_193317.jpg dates 1686799996  >>  1686799997
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230615_095611.jpg dates 1686851770  >>  1686851771
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230616_100924.jpg dates 1686938964  >>  1686938965
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230616_103047.jpg dates 1686940246  >>  1686940247
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230616_105938.jpg dates 1700314591  >>  1700314592
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230621_202131.jpg dates 1687404090  >>  1687404091
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230714_195758.jpg dates 1689379078  >>  1689379079
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230714_195856.jpg dates 1689379136  >>  1689379137
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230805_140420.jpg dates 1691258664  >>  1691258665
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230808_200013.jpg dates 1691539212  >>  1691539213
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230817_113328.jpg dates 1692286408  >>  1692286409
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230817_113657.jpg dates 1692286616  >>  1692286617
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230918_075259.jpg dates 1695016378  >>  1695016379
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230918_081112.jpg dates 1700314592  >>  1700314593
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220904_134712.jpg dates 1662313632  >>  1662313633
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220905_100822.jpg dates 1662386902  >>  1662386903
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220906_130849.jpg dates 1662484128  >>  1662484129
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220906_142603.jpg dates 1662488762  >>  1662488763
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220906_144902.jpg dates 1662490142  >>  1662490143
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220924_135202.jpg dates 1664041922  >>  1664041923
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221003_101623.jpg dates 1664806582  >>  1664806583
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221003_155713.jpg dates 1664827032  >>  1664827033
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221015_110030.jpg dates 1665846030  >>  1665846031
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221015_120403.jpg dates 1665849842  >>  1665849843
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221021_100201.jpg dates 1666360920  >>  1666360921
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221113_150523.jpg dates 1668369922  >>  1668369923
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221223_192914.jpg dates 1671841754  >>  1671841755
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20221231_202000.jpg dates 1672536000  >>  1672536001
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230112_190327.jpg dates 1673568206  >>  1673568207
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230125_103913.jpg dates 1674661152  >>  1674661153
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230125_143727.jpg dates 1674675446  >>  1674675447
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230126_125350.jpg dates 1674755630  >>  1674755631
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20220903_190613.jpg dates 1662246372  >>  1662246373
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230202_160959_03.jpg dates 1700314598  >>  1700314599
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230607_163234.jpg dates 1686184354  >>  1686184355
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/karen_photos/20230920_115603.jpg dates 1695203764  >>  1695203765
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/kmz_fr_gep.kml dates 1698693596  >>  1698693597
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/kmz_fr_gep.kmz dates 1698693521  >>  1698693522
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/path.kml dates 1698694159  >>  1698694160
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/pathb.kml dates 1698693744  >>  1698693745
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/path_rsh.kml dates 1701553467  >>  1701553468
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/path_tesslate.kml dates 1698694172  >>  1698694173
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/photo_geo/PXL_20230928_075013659.jpg dates 1695887416  >>  1695887417
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/photo_geo/PXL_20230928_075046198.jpg dates 1695887448  >>  1695887449
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/photo_geo/PXL_20230928_075056754.jpg dates 1695887460  >>  1695887461
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/photo_geo/PXL_20230928_075454035.jpg dates 1695887696  >>  1695887697
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/photo_no_geo/DSCN3016.JPG dates 1388548800  >>  1388548801
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/photo_no_geo/DSCN3017.JPG dates 1388548800  >>  1388548801
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/photo_no_geo/DSCN3018.JPG dates 1388548800  >>  1388548801
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/photo_no_geo/DSCN3020.JPG dates 1388548800  >>  1388548801
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/photo_no_geo/DSCN3021.JPG dates 1388548800  >>  1388548801
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/run_example.py dates 1698329794  >>  1698329795
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/simplekml_chat.py dates 1698692969  >>  1698692970
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/simplekml_chat_2.py dates 1698694171  >>  1698694172
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/test_1.py dates 1698329263  >>  1698329264
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/test/test_dir_exp.py dates 1699129125  >>  1699129126
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/long_lat.csv dates 1700849503  >>  1700849504
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/long_lat.ods dates 1700787310  >>  1700787311
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/long_lat.txt dates 1700786987  >>  1700786988
+update /mnt/WIN_D/for_github/geo_track/long_lat_b.ods
+dates 1703284441 --> 1701020978
+update /mnt/WIN_D/for_github/geo_track/main.py
+dates 1707065627 --> 1701621113
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/dwn/fuelio-trip-visualizer-main/.gitignore dates 1682449190  >>  1682449191
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/dwn/fuelio-trip-visualizer-main/fuelio-trip-visualizer-main.zip dates 1698075333  >>  1698075334
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/dwn/fuelio-trip-visualizer-main/LICENSE dates 1682449190  >>  1682449191
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/dwn/fuelio-trip-visualizer-main/map.html dates 1698328418  >>  1698328419
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/dwn/fuelio-trip-visualizer-main/README.md dates 1682449190  >>  1682449191
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/dwn/fuelio-trip-visualizer-main/routes/2023-10-22_Oct_22,_2023_11_06_08_AM.gpx dates 1698075533  >>  1698075534
+skip based on date /mnt/WIN_D/Russ/0000/python00/python3/_projects/geo_track/dwn/fuelio-trip-visualizer-main/routes/2023-10-22_Oct_22,_2023_11_06_08_AM.gpxz dates 1698075533  >>  1698075534
